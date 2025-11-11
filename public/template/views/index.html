@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startout AI - Intelligent Customer Experience Solutions</title>
+    <script src="../js/script.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"  href="../css/style.css">
+    </link>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header class="header d-flex justify-content-between align-items-center">
+        <div class="py-2">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <div class="logo-image me-2">
+                    <img src="images/logo-startout-ai.png" alt="Startout AI Logo" style="height: 40px;">
+                </div>
+                <div class="logo-text">Startout AI</div>
+            </a>
+        </div>
+        <nav class="mega-menu-wrapper d-none d-lg-flex px-2 align-items-center justify-content-center">
+            <ul class="d-flex align-items-center h-100 w-100 justify-content-center">
+                <li class="menu-item has-children">
+                    <a href="#" class="menu-link">Services</a>
+                    <div class="mega-menu-dropdown">
+                        <div class="mega-menu-content">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="sub-menu mb-4">
+                                        <h4 class="sub-menu-title">AI Data Annotation</h4>
+                                        <div class="nested-menu">
+                                            <a href="#">Data Collection & Annotaion</a>
+                                            <p>Highly accurate training data.</p>
+                                        </div>
+                                        <div class="nested-menu">
+                                            <a href="#">Generative AI & RHLF</a>
+                                            <p>Reinforced learning from human feedback (RLHF) procedures.</p>
+                                        </div>
+                                        <div class="nested-menu">
+                                            <a href="#">Model Evaluation</a>
+                                            <p>Enhance Performance for Your AI Solutions.</p>
+                                        </div>
+                                    </div>
+                                    <div class="sub-menu">
+                                        <h4 class="sub-menu-title">Data, Security & Compliance</h4>
+                                        <div class="nested-menu">
+                                            <a href="#">Our Secure CX Platform</a>
+                                            <p>Our patent-pending, remote work security solution.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="sub-menu">
+                                        <h4 class="sub-menu-title">Moderation</h4>
+
+                                        <div class="nested-menu">
+                                            <a href="#">Trust & Safety</a>
+                                        </div>
+                                        <div class="nested-menu">
+                                            <a href="#">Content Moderation</a>
+                                        </div>
+                                        <div class="nested-menu">
+                                            <a href="#">Community Management</a>
+                                        </div>
+                                        <div class="nested-menu">
+
+                                            <a href="#">Social Media</a>
+                                            <div class="sub-menu">
+                                                <h4 class="sub-menu-title">Customer Support </h4>
+                                                <div class="nested-menu">
+                                                    <a href="#">General Support</a>
+                                                    <p>Multi-language tier-1 to advanced support</p>
+                                                    <a href="#">Technical Support</a>
+                                                    <p>Skilled troubleshooting at any tier.</p>
+                                                    <a href="#">CRM & Tool Integration</a>
+                                                    <p>Get the most from your AI tools.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">AI & Automation</a>
+                </li>
+                <li class="menu-item has-children">
+                    <a href="#" class="menu-link">Industries</a>
+                    <div class="mega-menu-dropdown">
+                        <div class="mega-menu-content">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="sub-menu">
+                                        <h4 class="sub-menu-title">Areas of Specialization</h4>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="nested-menu">
+                                                    <a href="#">Gaming / Player Experience</a>
+                                                </div>
+                                                <div class="nested-menu">
+                                                    <a href="#">Travel & Tourism</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="nested-menu">
+                                                    <a href="#">E-Commerce & Retail</a>
+                                                </div>
+                                                <div class="nested-menu">
+                                                    <a href="#">Technology</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="nested-menu">
+                                                    <a href="#">Crypto & NFTs</a>
+                                                </div>
+                                                <div class="nested-menu">
+                                                    <a href="#">Human Resource</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">Why Startout AI?</a>
+                </li>
+                <li class="menu-item has-children">
+                    <a href="#" class="menu-link">Resources</a>
+                    <div class="mega-menu-dropdown">
+                        <div class="mega-menu-content">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="sub-menu">
+                                                <h4 class="sub-menu-title">Blog</h4>
+                                                <div class="nested-menu">
+                                                    <a href="#">The Latest</a>
+                                                    <p>What we're thinking about today.</p>
+                                                </div>
+                                                <div class="nested-menu">
+                                                    <a href="#">The Archives</a>
+                                                    <p>2008-2023.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="sub-menu">
+                                                <h4 class="sub-menu-title">Resources</h4>
+                                                <div class="nested-menu">
+                                                    <a href="#">Resource Library</a>
+                                                    <p>Case studies, ebooks, guides, and more.</p>
+                                                </div>
+                                                <div class="nested-menu">
+                                                    <a href="#">Customer Support Outsourcing</a>
+                                                    <p>A complete guide to modern customer demands.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="dummy-img dummy-img-sm">Spotify Case Study</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title"><a href="#" class="stretched-link">Spotify Case
+                                                    Study</a></h5>
+                                            <p class="card-text small">Spotify Doesn't Miss a Beat with Help from
+                                                Startout AI</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item has-children">
+                    <a href="#" class="menu-link">Company</a>
+                    <div class="mega-menu-dropdown">
+                        <div class="mega-menu-content">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="sub-menu">
+                                        <h4 class="sub-menu-title">Get to Know Us</h4>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="nested-menu">
+                                                    <a href="#">Our Work</a>
+                                                </div>
+                                                <div class="nested-menu">
+                                                    <a href="">About</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="nested-menu">
+                                                    <a href="#">Press</a>
+                                                </div>
+                                                <div class="nested-menu">
+                                                    <a href="#">Careers</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="dummy-img dummy-img-sm">Cubeless Platform</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title"><a href="#" class="stretched-link">Cubeless</a></h5>
+                                            <p class="card-text small">Our patent-pending security solution.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="d-flex justify-content-end align-items-center gap-3">
+            <a href="joinUs.html" class="d-none d-md-block">
+                <button class="btn btn-secondaryMenu">Join the Startout</button>
+            </a>
+            <a href="contactUs.html" class="d-none d-md-block">
+                <button class="btn btn-primaryMenu">Contact us</button>
+            </a>
+            <button class="d-block d-lg-none btn btn-link p-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#mobileMenu">
+                <i class="fas fa-bars fa-lg" style="color: var(--msq-black);"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu (Collapsed) -->
+    <div class="collapse d-lg-none" id="mobileMenu">
+        <div class="bg-white p-3 shadow-sm">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">General Support</a></li>
+                        <li><a class="dropdown-item" href="#">Technical Support</a></li>
+                        <li><a class="dropdown-item" href="#">CRM & Tool Integration</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Trust & Safety</a></li>
+                        <li><a class="dropdown-item" href="#">Content Moderation</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">AI & Automation</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Industries</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Gaming</a></li>
+                        <li><a class="dropdown-item" href="#">Travel & Tourism</a></li>
+                        <li><a class="dropdown-item" href="#">E-Commerce</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Why Startout AI?</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Resources</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Blog</a></li>
+                        <li><a class="dropdown-item" href="#">Case Studies</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Company</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">About</a></li>
+                        <li><a class="dropdown-item" href="#">Careers</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item mt-2">
+                    <a href="#" class="btn btn-secondaryMenu w-100">Join the Mods</a>
+                </li>
+                <li class="nav-item mt-2">
+                    <a href="#" class="btn btn-primaryMenu w-100">Contact us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="fw-bold mb-4">Harmonized AI for What Truly Matters</h1>
+            <p class="lead mb-5">Achieve KPIs, scale support, nurture trust, and unify communities, while trimming
+                costs. Startout AI makes it effortless</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="contactUs.html#contact-form" class="btn btn-outline-light btn-lg px-4 py-3 fw-bold">Let's
+                    talk</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title">Hybrid by Design. Intelligent by Nature</h2>
+                    <p class="lead">Startout AI isn’t just about outsourcing, it’s about orchestrating people and AI for
+                        maximum impact</p>
+                    <p>From day one, we’ve helped businesses thrive. Innovation leads the way, but our mission stays
+                        true.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="dummy-img dummy-img-lg">Team Collaboration</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Driven Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
+                    <h2 class="section-title">Insight-Led</h2>
+                    <p class="lead">Results that matter begin with understanding.</p>
+                    <p>At Startout AI, every decision stems from data. We calibrate your project with precision,
+                        forecast impact, and scale dynamically. From CX excellence to moderation mastery, continuous
+                        refinement is what sets us apart.</p>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="dummy-img dummy-img-lg">Data Analytics Dashboard</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Section -->
+    <section class="section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title">AI & Automation</h2>
+                    <p>Automation that never sleeps. Intelligence that adapts. And human touch where it matters most.
+                    </p>
+                    <p>Your processes, reimagined. With advanced AI and people-powered insight working round the clock.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="dummy-img dummy-img-lg">AI Technology</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Moderation Section -->
+    <section class="section bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="section-title text-white">Trust & Safety Mastered by the Originators</h2>
+            <p class="lead mb-5 mx-auto" style="max-width: 800px;">You deserve a partner that set the industry standard.
+                We combine breakthrough algorithms with expert community managers to shield your brand, and your users
+                from online toxicity, 24/7.</p>
+            <a href="page.html" class="btn btn-light btn-lg px-4 py-3 fw-bold">Learn More <i
+                    class="fas fa-arrow-right ms-2"></i></a>
+        </div>
+    </section>
+
+    <!-- Strategy Section -->
+    <section class="section">
+        <div class="container text-center">
+            <p class="section-subtitle">Fuel your outsourcing goals.</p>
+            <h2 class="section-title">CX Integration Intelligence on Demand</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p class="mb-5">Get more than off-the-shelf. We fine-tune your stack with strategic guidance,
+                        realtime reporting, and hands-on training, so your daily operations never miss a beat.</p>
+                    <a href="page.html" class="btn btn-outline-primary btn-lg px-4 py-3 fw-bold">Learn More <i
+                            class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+
+    <!-- Services Section -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Customer Care</h3>
+                            <p class="card-text">Exceptional support across all channels.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">AI & Automation</h3>
+                            <p class="card-text">Intelligent solutions for modern businesses.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Technical Support</h3>
+                            <p class="card-text">Expert help when you need it most.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">CRM Optimization</h3>
+                            <p class="card-text">Get the most from your customer data.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">CRM & Tool Integration</h3>
+                            <p class="card-text">Seamless connections between systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Moderation Section -->
+    <section class="section bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="section-title text-white">Moderation Services</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Content Moderation</h3>
+                            <p class="card-text">Keep your platforms safe with our expert moderation teams.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Trust & Safety</h3>
+                            <p class="card-text">Protect your community with our comprehensive safety solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Community Management</h3>
+                            <p class="card-text">Build and nurture engaged communities with our experts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="logo-placeholder mb-3">Startout AI</div>
+                    <p>Intelligent customer experience solutions powered by the perfect blend of humans and technology.
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5 class="text-white mb-3">Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">AI Data Annotation</a></li>
+                        <li class="mb-2"><a href="#">Customer Support</a></li>
+                        <li class="mb-2"><a href="#">Content Moderation</a></li>
+                        <li class="mb-2"><a href="#">AI & Automation</a></li>
+                        <li><a href="#">CRM Integration</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5 class="text-white mb-3">Industries</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">Gaming</a></li>
+                        <li class="mb-2"><a href="#">E-Commerce</a></li>
+                        <li class="mb-2"><a href="#">Technology</a></li>
+                        <li><a href="#">Human Resource</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5 class="text-white mb-3">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="aboutUs.html">About</a></li>
+                        <li class="mb-2"><a href="career.html">Careers</a></li>
+                        <li class="mb-2"><a href="#">Press</a></li>
+                        <li><a href="contactUs.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-12">
+                    <h5 class="text-white mb-3">Connect</h5>
+                    <div class="d-flex gap-3 mb-3">
+                        <a href="#" class="text-white"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-facebook fa-lg"></i></a>
+                    </div>
+                    <a href="#" class="btn btn-primaryMenu">Get in Touch</a>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="small mb-0">©2025 Startout AI, Inc. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="small mb-0">To ensure you get the best experience, we use cookies on our website. By
+                        continuing to use our website you agree to our use of cookies.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all dropdown triggers
+            const dropdownTriggers = document.querySelectorAll('.has-children');
+            const dropdowns = document.querySelectorAll('.mega-menu-dropdown');
+
+            // Close all dropdowns except the current one
+            function closeAllDropdowns(exceptThis) {
+                dropdownTriggers.forEach(trigger => {
+                    if (trigger !== exceptThis) {
+                        trigger.classList.remove('active');
+                        trigger.querySelector('.menu-link').classList.remove('active');
+                    }
+                });
+            }
+
+            // Toggle dropdown on click
+            dropdownTriggers.forEach(trigger => {
+                const link = trigger.querySelector('.menu-link');
+                const dropdown = trigger.querySelector('.mega-menu-dropdown');
+
+                // Click handler for dropdown trigger
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    // Close all other dropdowns first
+                    closeAllDropdowns(trigger);
+
+                    // Toggle current dropdown
+                    trigger.classList.toggle('active');
+                    link.classList.toggle('active');
+                });
+            });
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function () {
+                closeAllDropdowns(null);
+            });
+
+            // Prevent dropdown from closing when clicking inside it
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                });
+            });
+        });
+    </script>
+    <!-- Floating Chat Widget -->
+    <div id="chat-container">
+        <div id="chat-widget">
+            <div id="chat-header">
+                <h6>Startout AI Support</h6>
+            </div>
+            <div id="chat-body">
+                <div id="chat-messages">
+                    <div class="chat-message bot-message">
+                        <div class="message-content">
+                            Hello! How can we help you today?
+                        </div>
+                        <div class="message-time">Just now</div>
+                    </div>
+                </div>
+                <div id="chat-input-area">
+                    <input type="text" id="chat-input" placeholder="Type your message...">
+                    <button id="chat-send"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="chat-toggle">
+            <i class="fas fa-comment-dots"></i>
+        </div>
+    </div>
+</body>
+
+</html>

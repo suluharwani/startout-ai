@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Security & Compliance | Startout AI</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"  href="../css/style.css">
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <header class="header d-flex justify-content-between align-items-center">
+        <div class="py-2">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <div class="logo-image me-2">
+                    <img src="images/logo-startout-ai.png" alt="Startout AI Logo" style="height: 40px;">
+                </div>
+                <div class="logo-text">Startout AI</div>
+            </a>
+        </div>
+        <nav class="mega-menu-wrapper d-none d-lg-flex px-2 align-items-center justify-content-center">
+            <ul class="d-flex align-items-center h-100 w-100 justify-content-center">
+                <li class="menu-item has-children">
+                    <a href="#" class="menu-link">Services</a>
+                    <div class="mega-menu-dropdown">
+                        <!-- Same mega menu content as index.html -->
+                    </div>
+                </li>
+                <!-- Other menu items same as index.html -->
+            </ul>
+        </nav>
+        <div class="d-flex justify-content-end align-items-center gap-3">
+            <a href="joinUs.html" class="d-none d-md-block">
+                <button class="btn btn-secondaryMenu">Join the Startout</button>
+            </a>
+            <a href="contactUs.html" class="d-none d-md-block">
+                <button class="btn btn-primaryMenu">Contact us</button>
+            </a>
+            <button class="d-block d-lg-none btn btn-link p-0" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+                <i class="fas fa-bars fa-lg" style="color: var(--msq-black);"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu (same as index.html) -->
+    <div class="collapse d-lg-none" id="mobileMenu">
+        <!-- Same mobile menu content as index.html -->
+    </div>
+
+    <!-- Hero Section -->
+    <section class="service-hero bg-dark text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 py-5">
+                    <h1 class="display-4 fw-bold mb-3">Secure CX Platform</h1>
+                    <p class="lead mb-4">Our patent-pending security solution for protected remote work environments.</p>
+                    <a href="#contact-form" class="btn btn-primaryMenu btn-lg px-4 py-3">Request Security Demo</a>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block">
+                    <div class="dummy-img dummy-img-lg">Security Platform</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="bg-light py-3">
+        <div class="container">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="services.html">Services</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Data Security</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="service-details py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="security-features">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="feature-card p-4 h-100">
+                                    <div class="feature-icon bg-primary text-white rounded-circle mb-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+                                    <h3>Data Encryption</h3>
+                                    <p>End-to-end encryption for all customer interactions and data transfers.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-card p-4 h-100">
+                                    <div class="feature-icon bg-primary text-white rounded-circle mb-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <h3>Compliance Standards</h3>
+                                    <p>GDPR, CCPA, HIPAA, and SOC 2 compliant solutions.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-card p-4 h-100">
+                                    <div class="feature-icon bg-primary text-white rounded-circle mb-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                        <i class="fas fa-user-shield"></i>
+                                    </div>
+                                    <h3>Access Controls</h3>
+                                    <p>Granular permission settings and multi-factor authentication.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-card p-4 h-100">
+                                    <div class="feature-icon bg-primary text-white rounded-circle mb-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                        <i class="fas fa-cloud"></i>
+                                    </div>
+                                    <h3>Secure Infrastructure</h3>
+                                    <p>Enterprise-grade security with regular penetration testing.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section bg-primary text-white">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="mb-4">Secure Your Customer Data Today</h2>
+                    <p class="lead mb-5">Our security experts are ready to assess your needs and implement our proven solutions.</p>
+                    <a href="contactUs.html" class="btn btn-light btn-lg px-4 py-3">Contact Security Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="footer">
+        <!-- Same footer content as index.html -->
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Same JavaScript as index.html for menu functionality
+    </script>
+</body>
+</html>
