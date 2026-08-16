@@ -76,7 +76,6 @@ $copyright   = str_replace('{year}', (string) $year, setting('copyright_text', '
 
         <div class="footer-bottom">
             <span><?= e($copyright) ?></span>
-            <span class="footer-made">Crafted with <i class="fa-solid fa-heart" style="color:var(--primary)"></i> by <?= e(setting('company_name')) ?></span>
         </div>
     </div>
 </footer>
