@@ -1,103 +1,135 @@
-<?= $this->include('templates/header') ?>
-
-<!-- About Hero Section -->
-<section class="about-hero bg-dark text-white">
+<?php
+/** About us */
+$page = $page ?? null;
+$team = $team ?? [];
+?>
+<section class="page-hero">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 py-5">
-                <h1 class="display-4 fw-bold mb-3">Pioneering Intelligent Customer Experiences</h1>
-                <p class="lead mb-4">Startout AI combines cutting-edge artificial intelligence with deep human expertise to transform how businesses connect with their customers.</p>
-                <a href="#our-story" class="btn btn-primaryMenu btn-lg px-4 py-3">Our Story</a>
-            </div>
-            <div class="col-lg-6 d-none d-lg-block">
-                <div class="dummy-img dummy-img-lg">About Us Illustration</div>
-            </div>
+        <div class="breadcrumbs">
+            <a href="<?= url('/') ?>">Home</a><i class="fa-solid fa-chevron-right"></i><span>About Us</span>
         </div>
+        <span class="eyebrow">Who we are</span>
+        <h1><?= e($page['title'] ?? setting('about_heading', 'Pioneering Intelligent Customer Experiences')) ?></h1>
+        <p class="lead mb-0" style="max-width:660px"><?= e($page['subtitle'] ?? setting('about_text')) ?></p>
     </div>
 </section>
 
-<!-- Breadcrumb -->
-<nav aria-label="breadcrumb" class="bg-light py-3">
+<section class="section">
     <div class="container">
-        <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">About Us</li>
-        </ol>
-    </div>
-</nav>
-
-<!-- Our Story Section -->
-<section id="our-story" class="section">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 mb-5 mb-lg-0">
-                <h2 class="section-title mb-4">Our Story</h2>
-                <p class="lead">Founded in 2015, Startout AI began with a simple mission: to revolutionize customer experience through intelligent technology.</p>
-                <p>What started as a small team of AI enthusiasts has grown into an industry leader serving global brands across multiple sectors. Our journey has been marked by continuous innovation, from developing our first natural language processing algorithms to creating our patent-pending Cubeless security platform.</p>
-                <p>Today, we're proud to support over 200 clients worldwide, helping them deliver exceptional customer experiences while optimizing their operations.</p>
-            </div>
-            <div class="col-lg-6">
-                <?php if (!empty($milestones)): ?>
-                <div class="timeline">
-                    <?php foreach ($milestones as $milestone): ?>
-                    <div class="timeline-item mb-4">
-                        <div class="timeline-year bg-primary text-white rounded-pill px-3 py-1 d-inline-block mb-2">
-                            <?= $milestone['year'] ?>
-                        </div>
-                        <div class="timeline-content">
-                            <h5 class="mb-2"><?= $milestone['title'] ?></h5>
-                            <p class="mb-0"><?= $milestone['description'] ?></p>
-                        </div>
-                    </div>
-                    <?php endforeach; ?>
-                </div>
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6 reveal">
+                <span class="eyebrow">Our story</span>
+                <h2 class="mb-4">Orchestrating people and AI since day one</h2>
+                <?php if ($page && !empty($page['content'])): ?>
+                    <?= $page['content'] /* trusted admin HTML */ ?>
                 <?php else: ?>
-                <div class="dummy-img dummy-img-lg">Company Timeline</div>
+                    <p>Startout AI combines cutting-edge artificial intelligence with deep human expertise to transform how businesses connect with their customers, communities and teams.</p>
+                    <p>From a small team of specialists in Yogyakarta, Indonesia, we've grown into a trusted partner for brands that care deeply about how they show up online — at any scale, in any timezone.</p>
                 <?php endif; ?>
             </div>
+            <div class="col-lg-6 reveal">
+                <div class="form-card">
+                    <h5 class="mb-4">Our milestones</h5>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="tl-year">Founded</span>
+                            <h5>Startout AI is born</h5>
+                            <p>Launched in Yogyakarta, Indonesia with a focus on AI-powered customer experience.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="tl-year">Scale</span>
+                            <h5>Trust &amp; safety at scale</h5>
+                            <p>Built the operating model that now powers content moderation for global platforms.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="tl-year">Today</span>
+                            <h5>A harmonized AI partner</h5>
+                            <p>Data annotation, talent, social, industries and automation — all under one roof.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Team Section -->
-<section class="section bg-light">
+<section class="section section-alt">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center mb-5">
-                <h2 class="section-title">Meet Our Leadership Team</h2>
-                <p class="lead">The visionaries driving Startout AI forward</p>
-            </div>
+        <div class="section-head text-center mb-5 reveal">
+            <span class="eyebrow" style="justify-content:center">Our values</span>
+            <h2>What guides every decision</h2>
         </div>
         <div class="row g-4">
-            <?php foreach ($teamMembers as $member): ?>
-            <div class="col-md-4">
-                <div class="team-card text-center">
-                    <div class="team-img mb-4">
-                        <div class="dummy-img dummy-img-sm rounded-circle mx-auto">
-                            <?= substr($member['first_name'], 0, 1) . substr($member['last_name'], 0, 1) ?>
-                        </div>
+            <div class="col-md-6 col-lg-3 reveal">
+                <div class="value-card">
+                    <div class="vc-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                    <h4>Innovation</h4>
+                    <p>We constantly push boundaries to build smarter operating models.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 reveal">
+                <div class="value-card">
+                    <div class="vc-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <h4>Integrity</h4>
+                    <p>We build trust through transparency, honesty and ethical practice.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 reveal">
+                <div class="value-card">
+                    <div class="vc-icon"><i class="fa-solid fa-users"></i></div>
+                    <h4>Collaboration</h4>
+                    <p>The best solutions come from working closely with our clients.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 reveal">
+                <div class="value-card">
+                    <div class="vc-icon"><i class="fa-solid fa-award"></i></div>
+                    <h4>Excellence</h4>
+                    <p>We're committed to exceptional quality in everything we do.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php if (!empty($team)): ?>
+<section class="section">
+    <div class="container">
+        <div class="section-head text-center mb-5 reveal">
+            <span class="eyebrow" style="justify-content:center">Leadership</span>
+            <h2>Meet the team</h2>
+            <p class="sub mx-auto">The people steering Startout AI forward.</p>
+        </div>
+        <div class="row g-4">
+            <?php foreach ($team as $member): ?>
+            <div class="col-md-6 col-lg-3 reveal">
+                <div class="team-card">
+                    <div class="t-photo"><?= e(strtoupper(mb_substr($member['name'], 0, 1))) ?></div>
+                    <h4><?= e($member['name']) ?></h4>
+                    <div class="role"><?= e($member['position']) ?></div>
+                    <p><?= e($member['bio']) ?></p>
+                    <div class="t-social">
+                        <a href="<?= e($member['linkedin'] ?: setting('company_linkedin')) ?>" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="mailto:<?= e(company_email()) ?>" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
                     </div>
-                    <h4 class="mb-2"><?= $member['first_name'] ?> <?= $member['last_name'] ?></h4>
-                    <p class="text-muted mb-3"><?= $member['position'] ?></p>
-                    <p class="small"><?= $member['bio'] ?></p>
                 </div>
             </div>
             <?php endforeach; ?>
         </div>
     </div>
 </section>
+<?php endif; ?>
 
-<!-- CTA Section -->
-<section class="section bg-primary text-white">
-    <div class="container text-center">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <h2 class="mb-4">Ready to experience the Startout AI difference?</h2>
-                <p class="lead mb-5">Contact us today to learn how we can transform your customer experience.</p>
-                <a href="<?= base_url('contact') ?>" class="btn btn-light btn-lg px-4 py-3">Get in Touch</a>
+<section class="section section-alt">
+    <div class="container">
+        <div class="cta-banner reveal">
+            <div class="container">
+                <h2 class="mb-3">Let's build something that truly matters</h2>
+                <p class="mx-auto mb-4" style="max-width:560px">Schedule a consultation and see how we can help your business thrive.</p>
+                <a href="<?= url('/start-journey') ?>" class="btn btn-light-solid btn-lg px-4 py-3">
+                    <i class="fa-solid fa-arrow-right me-2"></i>Start Your Journey
+                </a>
             </div>
         </div>
     </div>
 </section>
-
-<?= $this->include('templates/footer') ?>

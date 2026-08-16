@@ -1,102 +1,107 @@
-<?= $this->include('templates/header') ?>
-
-<!-- Careers Hero Section -->
-<section class="careers-hero bg-primary text-white">
+<?php
+/** Careers — applications via LinkedIn per revision */
+$jobs = $jobs ?? [];
+$linkedin = setting('company_linkedin', 'https://www.linkedin.com/company/startout-ai/');
+?>
+<section class="page-hero">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 py-5">
-                <h1 class="display-4 fw-bold mb-3">Build the Future of Customer Experience</h1>
-                <p class="lead mb-4">Join our team of innovators working at the intersection of AI and human-centered design.</p>
-                <div class="d-flex flex-wrap gap-3">
-                    <a href="#open-positions" class="btn btn-light btn-lg px-4 py-3">View Open Positions</a>
-                    <a href="#why-join-us" class="btn btn-outline-light btn-lg px-4 py-3">Why Join Us</a>
+        <div class="breadcrumbs">
+            <a href="<?= url('/') ?>">Home</a><i class="fa-solid fa-chevron-right"></i><span>Careers</span>
+        </div>
+        <span class="eyebrow">Careers</span>
+        <h1>Build the future of customer experience</h1>
+        <p class="lead mb-0" style="max-width:640px">Join our team in Yogyakarta, Indonesia — working at the intersection of AI and human-centered design.</p>
+        <div class="hero-cta">
+            <a href="#open-positions" class="btn btn-primary btn-lg px-4 py-3">View open positions</a>
+            <a href="<?= e($linkedin) ?>" target="_blank" rel="noopener" class="btn btn-outline btn-lg px-4 py-3">
+                <i class="fa-brands fa-linkedin me-2"></i>Follow us on LinkedIn
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-head text-center mb-5 reveal">
+            <span class="eyebrow" style="justify-content:center">Why join us</span>
+            <h2>Work that matters, culture that supports you</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3 reveal">
+                <div class="value-card">
+                    <div class="vc-icon"><i class="fa-solid fa-brain"></i></div>
+                    <h4>Cutting-edge AI</h4>
+                    <p>Work with the latest AI technologies and help shape the future of customer experience.</p>
                 </div>
             </div>
-            <div class="col-lg-6 d-none d-lg-block">
-                <div class="dummy-img dummy-img-lg">Team Collaboration</div>
+            <div class="col-md-6 col-lg-3 reveal">
+                <div class="value-card">
+                    <div class="vc-icon"><i class="fa-solid fa-globe"></i></div>
+                    <h4>Global impact</h4>
+                    <p>Your work directly impacts customers and brands around the world.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 reveal">
+                <div class="value-card">
+                    <div class="vc-icon"><i class="fa-solid fa-users"></i></div>
+                    <h4>Talented team</h4>
+                    <p>Collaborate with some of the brightest minds in AI and customer experience.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 reveal">
+                <div class="value-card">
+                    <div class="vc-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h4>Growth opportunities</h4>
+                    <p>We invest in your development with training, mentorship and clear career paths.</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Breadcrumb -->
-<nav aria-label="breadcrumb" class="bg-light py-3">
+<?php if (!empty($jobs)): ?>
+<section id="open-positions" class="section section-alt">
     <div class="container">
-        <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Careers</li>
-        </ol>
-    </div>
-</nav>
-
-<!-- Open Positions Section -->
-<section id="open-positions" class="section">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center mb-5">
-                <h2 class="section-title">Open Positions</h2>
-                <p class="lead">Explore opportunities to join our growing team</p>
-            </div>
+        <div class="section-head text-center mb-5 reveal">
+            <span class="eyebrow" style="justify-content:center">Open positions</span>
+            <h2>Explore current openings</h2>
+            <p class="sub mx-auto">All roles are based in Yogyakarta, Indonesia. Apply through our LinkedIn page.</p>
         </div>
-        
-        <div class="row">
-            <div class="col-lg-10 mx-auto">
-                <?php if (!empty($jobPositions)): ?>
-                    <div class="position-list">
-                        <?php foreach ($jobPositions as $job): ?>
-                        <div class="position-card mb-4">
-                            <div class="card border-0 shadow-sm">
-                                <div class="card-body p-4">
-                                    <div class="d-flex justify-content-between align-items-start">
-                                        <div>
-                                            <h4 class="mb-2"><?= $job['title'] ?></h4>
-                                            <div class="d-flex flex-wrap gap-3 mb-3">
-                                                <span class="badge bg-light text-dark">
-                                                    <i class="fas fa-map-marker-alt me-2"></i>
-                                                    <?= $job['is_remote'] ? 'Remote' : $job['location'] ?>
-                                                </span>
-                                                <span class="badge bg-light text-dark">
-                                                    <i class="fas fa-briefcase me-2"></i>
-                                                    <?= ucfirst(str_replace('-', ' ', $job['employment_type'])) ?>
-                                                </span>
-                                                <span class="badge bg-light text-dark">
-                                                    <i class="fas fa-users me-2"></i>
-                                                    <?= $job['department'] ?>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <span class="badge bg-primary"><?= ucfirst($job['department']) ?></span>
-                                    </div>
-                                    <p class="mb-4"><?= character_limiter($job['description'], 200) ?></p>
-                                    <a href="<?= base_url('careers/apply/' . $job['slug']) ?>" class="btn btn-primaryMenu">Apply Now</a>
-                                </div>
-                            </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <?php foreach ($jobs as $job): ?>
+                <div class="job-card reveal">
+                    <div>
+                        <h4><?= e($job['title']) ?></h4>
+                        <div class="job-meta">
+                            <span class="job-badge cat"><i class="fa-solid fa-layer-group"></i><?= e($job['category']) ?></span>
+                            <span class="job-badge"><i class="fa-solid fa-location-dot"></i><?= e($job['location']) ?></span>
+                            <span class="job-badge"><i class="fa-solid fa-clock"></i><?= e($job['type']) ?></span>
                         </div>
-                        <?php endforeach; ?>
+                        <p class="mb-0 mt-2 small"><?= e($job['description']) ?></p>
                     </div>
-                <?php else: ?>
-                    <div class="text-center py-5">
-                        <h3 class="text-muted">No open positions at the moment</h3>
-                        <p class="text-muted">Check back later for new opportunities or submit a general application.</p>
-                        <a href="<?= base_url('join') ?>" class="btn btn-primaryMenu">Submit General Application</a>
-                    </div>
-                <?php endif; ?>
+                    <a href="<?= e($linkedin) ?>" target="_blank" rel="noopener" class="btn btn-primary">
+                        <i class="fa-brands fa-linkedin me-2"></i>Apply on LinkedIn
+                    </a>
+                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
 </section>
+<?php endif; ?>
 
-<!-- CTA Section -->
-<section class="section bg-dark text-white">
-    <div class="container text-center">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <h2 class="mb-4">Don't See Your Dream Role?</h2>
-                <p class="lead mb-5">We're always looking for talented individuals. Send us your resume and we'll contact you when a matching position opens.</p>
-                <a href="<?= base_url('join') ?>" class="btn btn-light btn-lg px-4 py-3">Submit General Application</a>
+<section class="section">
+    <div class="container">
+        <div class="cta-banner reveal">
+            <div class="container">
+                <h2 class="mb-3">Don't see your dream role?</h2>
+                <p class="mx-auto mb-4" style="max-width:560px">We're always looking for talented people. Follow us on LinkedIn for the latest openings.</p>
+                <a href="<?= e($linkedin) ?>" target="_blank" rel="noopener" class="btn btn-light-solid btn-lg px-4 py-3">
+                    <i class="fa-brands fa-linkedin me-2"></i>Check our LinkedIn
+                </a>
             </div>
         </div>
     </div>
 </section>
-
-<?= $this->include('templates/footer') ?>

@@ -1,213 +1,136 @@
-<?= $this->include('templates/header') ?>
-
-<!-- Contact Hero Section -->
-<section class="contact-hero bg-dark text-white">
+<?php
+/** Contact page with CSRF-protected form */
+$sent   = isset($_GET['sent']);
+$errors = $_SESSION['_errors'] ?? [];
+unset($_SESSION['_errors']);
+?>
+<section class="page-hero">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 py-5">
-                <h1 class="display-4 fw-bold mb-3">Let's talk about your customer experience needs</h1>
-                <p class="lead mb-4">Our team is ready to help you transform your customer interactions with intelligent AI solutions.</p>
-                <div class="d-flex flex-wrap gap-3">
-                    <a href="#contact-form" class="btn btn-primaryMenu btn-lg px-4 py-3">Send us a message</a>
-                    <a href="#contact-info" class="btn btn-outline-light btn-lg px-4 py-3">Contact information</a>
-                </div>
-            </div>
-            <div class="col-lg-6 d-none d-lg-block">
-                <div class="dummy-img dummy-img-lg">Contact Us Illustration</div>
-            </div>
+        <div class="breadcrumbs">
+            <a href="<?= url('/') ?>">Home</a><i class="fa-solid fa-chevron-right"></i><span>Contact</span>
         </div>
+        <span class="eyebrow">Contact us</span>
+        <h1>Let's talk about your needs</h1>
+        <p class="lead mb-0" style="max-width:640px">Send us a message or reach us directly — our team is ready to help you transform your customer interactions.</p>
     </div>
 </section>
 
-<!-- Breadcrumb -->
-<nav aria-label="breadcrumb" class="bg-light py-3">
-    <div class="container">
-        <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
-        </ol>
-    </div>
-</nav>
-
-<!-- Contact Form Section -->
-<section id="contact-form" class="section">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body p-5">
-                        <h2 class="text-center mb-4">Send us a message</h2>
-                        <p class="text-center text-muted mb-5">Complete the form below and our team will get back to you within 24 hours.</p>
-                        
-                        <?php if (session()->getFlashdata('errors')): ?>
-                            <div class="alert alert-danger">
-                                <ul class="mb-0">
-                                    <?php foreach (session()->getFlashdata('errors') as $error): ?>
-                                        <li><?= $error ?></li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div>
-                        <?php endif; ?>
-
-                        <?php if (session()->getFlashdata('error')): ?>
-                            <div class="alert alert-danger">
-                                <?= session()->getFlashdata('error') ?>
-                            </div>
-                        <?php endif; ?>
-                        
-                        <form action="<?= base_url('contact/submit') ?>" method="post">
-                            <?= csrf_field() ?>
-                            
-                            <div class="row">
-                                <div class="col-md-6 mb-4">
-                                    <label for="firstName" class="form-label">First Name *</label>
-                                    <input type="text" class="form-control" id="firstName" name="first_name" required>
-                                </div>
-                                <div class="col-md-6 mb-4">
-                                    <label for="lastName" class="form-label">Last Name *</label>
-                                    <input type="text" class="form-control" id="lastName" name="last_name" required>
-                                </div>
-                            </div>
-                            
-                            <div class="mb-4">
-                                <label for="email" class="form-label">Email Address *</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
-                            </div>
-                            
-                            <div class="mb-4">
-                                <label for="company" class="form-label">Company Name</label>
-                                <input type="text" class="form-control" id="company" name="company">
-                            </div>
-                            
-                            <div class="mb-4">
-                                <label for="phone" class="form-label">Phone Number</label>
-                                <input type="tel" class="form-control" id="phone" name="phone">
-                            </div>
-                            
-                            <div class="mb-4">
-                                <label for="service" class="form-label">Service Interest *</label>
-                                <select class="form-select" id="service" name="service_interest" required>
-                                    <option value="" selected disabled>Select a service</option>
-                                    <option value="customer-support">Customer Support</option>
-                                    <option value="ai-automation">AI & Automation</option>
-                                    <option value="content-moderation">Content Moderation</option>
-                                    <option value="technical-support">Technical Support</option>
-                                    <option value="crm-integration">CRM Integration</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            
-                            <div class="mb-4">
-                                <label for="message" class="form-label">Your Message *</label>
-                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                            </div>
-                            
-                            <div class="mb-4 form-check">
-                                <input type="checkbox" class="form-check-input" id="consent" name="privacy_consent" required>
-                                <label class="form-check-label" for="consent">I agree to the privacy policy and consent to Startout AI contacting me about my inquiry. *</label>
-                            </div>
-                            
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primaryMenu btn-lg px-5 py-3">Send Message</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Contact Info Section -->
-<section id="contact-info" class="section bg-light">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-10 text-center mb-5">
-                <h2 class="mb-3">Other ways to reach us</h2>
-                <p class="lead">We're available through multiple channels to serve you better.</p>
-            </div>
-        </div>
-        
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="contact-method text-center p-4 h-100">
-                    <div class="contact-icon bg-primary text-white rounded-circle mx-auto mb-4">
-                        <i class="fas fa-map-marker-alt fa-lg"></i>
-                    </div>
-                    <h4 class="mb-3">Our Headquarters</h4>
-                    <p class="mb-0"><?= $settings['company_address'] ?? '123 AI Boulevard, San Francisco, CA 94107, United States' ?></p>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="contact-method text-center p-4 h-100">
-                    <div class="contact-icon bg-primary text-white rounded-circle mx-auto mb-4">
-                        <i class="fas fa-phone-alt fa-lg"></i>
-                    </div>
-                    <h4 class="mb-3">Call Us</h4>
-                    <p class="mb-2"><strong>Sales:</strong> <?= $settings['phone_sales'] ?? '+1 (800) 123-4567' ?></p>
-                    <p class="mb-0"><strong>Support:</strong> <?= $settings['phone_support'] ?? '+1 (800) 987-6543' ?></p>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="contact-method text-center p-4 h-100">
-                    <div class="contact-icon bg-primary text-white rounded-circle mx-auto mb-4">
-                        <i class="fas fa-envelope fa-lg"></i>
-                    </div>
-                    <h4 class="mb-3">Email Us</h4>
-                    <p class="mb-2"><strong>General:</strong> <?= $settings['company_email'] ?? 'info@startoutai.com' ?></p>
-                    <p class="mb-0"><strong>Support:</strong> <?= $settings['support_email'] ?? 'support@startoutai.com' ?></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Team Section -->
 <section class="section">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center mb-5">
-                <h2 class="mb-3">Meet our leadership team</h2>
-                <p class="lead">Get to know the experts behind Startout AI's innovative solutions.</p>
-            </div>
-        </div>
-        
-        <div class="row g-4">
-            <?php foreach ($teamMembers as $member): ?>
-            <div class="col-md-4">
-                <div class="team-card text-center">
-                    <div class="team-img mb-4">
-                        <div class="dummy-img dummy-img-sm rounded-circle mx-auto">
-                            <?= substr($member['first_name'], 0, 1) . substr($member['last_name'], 0, 1) ?>
+        <div class="row g-5">
+            <!-- Form -->
+            <div class="col-lg-7">
+                <div class="form-card reveal">
+                    <h3 class="mb-1">Send us a message</h3>
+                    <p class="text-muted mb-4">Complete the form and our team will get back to you within 24 hours.</p>
+
+                    <?php if ($sent): ?>
+                    <div class="alert alert-success d-flex align-items-center gap-3">
+                        <i class="fa-solid fa-circle-check fa-lg"></i>
+                        <div>
+                            <strong>Thank you!</strong> Your message has been sent. We'll get back to you shortly.
                         </div>
                     </div>
-                    <h4 class="mb-2"><?= $member['first_name'] ?> <?= $member['last_name'] ?></h4>
-                    <p class="text-muted mb-3"><?= $member['position'] ?></p>
+                    <?php endif; ?>
+
+                    <?php if (!empty($errors['consent'])): ?>
+                    <div class="alert alert-danger"><?= e($errors['consent']) ?></div>
+                    <?php endif; ?>
+
+                    <form method="post" action="<?= url('/contact') ?>" novalidate>
+                        <?= csrf_field() ?>
+                        <input type="text" name="website" value="" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" for="first_name">First Name *</label>
+                                <input type="text" class="form-control <?= error_for('first_name') ? 'is-invalid' : '' ?>" id="first_name" name="first_name" value="<?= e(old('first_name')) ?>" required>
+                                <?php if (error_for('first_name')): ?><div class="invalid-feedback"><?= e(error_for('first_name')) ?></div><?php endif; ?>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" for="last_name">Last Name *</label>
+                                <input type="text" class="form-control <?= error_for('last_name') ? 'is-invalid' : '' ?>" id="last_name" name="last_name" value="<?= e(old('last_name')) ?>" required>
+                                <?php if (error_for('last_name')): ?><div class="invalid-feedback"><?= e(error_for('last_name')) ?></div><?php endif; ?>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="email">Email Address *</label>
+                            <input type="email" class="form-control <?= error_for('email') ? 'is-invalid' : '' ?>" id="email" name="email" value="<?= e(old('email')) ?>" required>
+                            <?php if (error_for('email')): ?><div class="invalid-feedback"><?= e(error_for('email')) ?></div><?php endif; ?>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" for="company">Company Name</label>
+                                <input type="text" class="form-control" id="company" name="company" value="<?= e(old('company')) ?>">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" for="phone">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" value="<?= e(old('phone')) ?>">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="service">Service Interest *</label>
+                            <select class="form-select <?= error_for('service') ? 'is-invalid' : '' ?>" id="service" name="service" required>
+                                <option value="" selected disabled>Select a service</option>
+                                <?php foreach ($services as $svc): ?>
+                                <option value="<?= e($svc['name']) ?>" <?= old('service') === $svc['name'] ? 'selected' : '' ?>><?= e($svc['name']) ?></option>
+                                <?php endforeach; ?>
+                                <option value="Other" <?= old('service') === 'Other' ? 'selected' : '' ?>>Other</option>
+                            </select>
+                            <?php if (error_for('service')): ?><div class="invalid-feedback"><?= e(error_for('service')) ?></div><?php endif; ?>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="message">Your Message *</label>
+                            <textarea class="form-control <?= error_for('message') ? 'is-invalid' : '' ?>" id="message" name="message" rows="5" required><?= e(old('message')) ?></textarea>
+                            <?php if (error_for('message')): ?><div class="invalid-feedback"><?= e(error_for('message')) ?></div><?php endif; ?>
+                        </div>
+
+                        <div class="mb-4 form-check">
+                            <input type="checkbox" class="form-check-input" id="consent" name="consent" <?= isset($_POST['consent']) ? 'checked' : '' ?> required>
+                            <label class="form-check-label small" for="consent">I agree to the privacy policy and consent to <?= e(setting('company_name')) ?> contacting me about my inquiry. *</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg w-100 py-3">
+                            <i class="fa-solid fa-paper-plane me-2"></i>Send Message
+                        </button>
+                    </form>
                 </div>
             </div>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</section>
 
-<!-- CTA Section -->
-<section class="section bg-primary text-white">
-    <div class="container text-center">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <h2 class="mb-4">Ready to transform your customer experience?</h2>
-                <p class="lead mb-5">Schedule a consultation with our experts today and discover how Startout AI can help your business.</p>
-                <div class="d-flex justify-content-center gap-3">
-                    <a href="#contact-form" class="btn btn-light btn-lg px-4 py-3 fw-bold">Get Started</a>
-                    <a href="tel:<?= preg_replace('/[^0-9+]/', '', $settings['phone_sales'] ?? '+18001234567') ?>" class="btn btn-outline-light btn-lg px-4 py-3 fw-bold">
-                        <i class="fas fa-phone-alt me-2"></i> Call Us
+            <!-- Contact info -->
+            <div class="col-lg-5">
+                <div class="form-card reveal">
+                    <h5 class="mb-4"><i class="fa-solid fa-circle-info me-2" style="color:var(--primary)"></i> Other ways to reach us</h5>
+
+                    <div class="side-card">
+                        <h5><i class="fa-solid fa-location-dot me-2" style="color:var(--primary)"></i> Location</h5>
+                        <p class="mb-0"><?= e(setting('company_city') . ', ' . setting('company_country')) ?></p>
+                    </div>
+
+                    <div class="side-card">
+                        <h5><i class="fa-solid fa-phone me-2" style="color:var(--primary)"></i> WhatsApp</h5>
+                        <p class="mb-0"><a href="<?= e(wa_link()) ?>" target="_blank" rel="noopener">+<?= e(preg_replace('/[^0-9]/', '', company_phone())) ?></a></p>
+                    </div>
+
+                    <div class="side-card">
+                        <h5><i class="fa-solid fa-envelope me-2" style="color:var(--primary)"></i> Email</h5>
+                        <p class="mb-0"><a href="mailto:<?= e(company_email()) ?>"><?= e(company_email()) ?></a></p>
+                    </div>
+
+                    <div class="side-card">
+                        <h5><i class="fa-brands fa-linkedin me-2" style="color:var(--primary)"></i> LinkedIn</h5>
+                        <p class="mb-0"><a href="<?= e(setting('company_linkedin')) ?>" target="_blank" rel="noopener"><?= e(setting('company_name')) ?> on LinkedIn</a></p>
+                    </div>
+
+                    <a href="<?= e(wa_link(setting('schedule_wa_message', 'Hi Startout AI, I would like to schedule a consultation.'))) ?>" target="_blank" rel="noopener" class="btn btn-primary w-100 btn-lg">
+                        <i class="fa-brands fa-whatsapp fa-lg me-2"></i>Schedule Consultation
                     </a>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<?= $this->include('templates/footer') ?>

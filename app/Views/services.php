@@ -1,74 +1,43 @@
-<?= $this->include('templates/header') ?>
-
-<!-- Services Hero Section -->
-<section class="services-hero bg-dark text-white">
+<?php /** Services overview */ ?>
+<section class="page-hero">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 py-5">
-                <h1 class="display-4 fw-bold mb-3">Intelligent Customer Experience Solutions</h1>
-                <p class="lead mb-4">Transform your customer interactions with our AI-powered services designed to deliver exceptional experiences at scale.</p>
-                <a href="#our-services" class="btn btn-primaryMenu btn-lg px-4 py-3">Explore Our Services</a>
-            </div>
-            <div class="col-lg-6 d-none d-lg-block">
-                <div class="dummy-img dummy-img-lg">AI Customer Service Illustration</div>
-            </div>
+        <div class="breadcrumbs">
+            <a href="<?= url('/') ?>">Home</a><i class="fa-solid fa-chevron-right"></i><span>Services</span>
         </div>
+        <span class="eyebrow">What we do</span>
+        <h1>Services designed for modern operations</h1>
+        <p class="lead mb-0" style="max-width:640px">From training data to trust &amp; safety, talent and automation — every service is built on the same human-in-the-loop operating model.</p>
     </div>
 </section>
 
-<!-- Breadcrumb -->
-<nav aria-label="breadcrumb" class="bg-light py-3">
+<section class="section">
     <div class="container">
-        <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Services</li>
-        </ol>
-    </div>
-</nav>
-
-<!-- Services Overview Section -->
-<section id="our-services" class="section">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center mb-5">
-                <h2 class="section-title">Our Comprehensive Service Portfolio</h2>
-                <p class="lead">From AI-powered automation to human-centered support, we offer a full spectrum of customer experience solutions tailored to your business needs.</p>
-            </div>
-        </div>
-        
         <div class="row g-4">
-            <?php foreach ($services as $service): ?>
-            <div class="col-md-6 col-lg-4">
-                <div class="service-card h-100 text-center">
-                    <?php if ($service['icon_class']): ?>
-                    <div class="service-icon bg-primary text-white rounded-circle mb-4 mx-auto">
-                        <i class="<?= $service['icon_class'] ?>"></i>
-                    </div>
-                    <?php endif; ?>
-                    <h3 class="mb-3"><?= $service['name'] ?></h3>
-                    <p class="mb-4"><?= $service['description'] ?></p>
-                    <a href="<?= base_url('services/' . $service['slug']) ?>" class="btn btn-outline-primary">Learn More</a>
-                </div>
+            <?php foreach ($services as $i => $svc): ?>
+            <div class="col-md-6 col-lg-4 reveal">
+                <a class="service-card" href="<?= url('/services/' . $svc['slug']) ?>">
+                    <span class="sc-icon"><i class="<?= e($svc['icon'] ?: 'fa-solid fa-briefcase') ?>"></i></span>
+                    <span class="eyebrow" style="margin-bottom:0"><?= e($svc['tagline']) ?></span>
+                    <h3><?= e($svc['name']) ?></h3>
+                    <p><?= e($svc['short_description']) ?></p>
+                    <span class="sc-link">Explore service <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
             </div>
             <?php endforeach; ?>
         </div>
     </div>
 </section>
 
-<!-- CTA Section -->
-<section class="section bg-primary text-white">
-    <div class="container text-center">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <h2 class="mb-4">Ready to transform your customer experience?</h2>
-                <p class="lead mb-5">Our team is ready to help you find the perfect solution for your business needs.</p>
-                <div class="d-flex justify-content-center gap-3">
-                    <a href="<?= base_url('contact') ?>" class="btn btn-light btn-lg px-4 py-3">Contact Us</a>
-                    <a href="<?= base_url('contact') ?>" class="btn btn-outline-light btn-lg px-4 py-3">Request Demo</a>
-                </div>
+<section class="section section-alt">
+    <div class="container">
+        <div class="cta-banner reveal">
+            <div class="container">
+                <h2 class="mb-3">Not sure where to start?</h2>
+                <p class="mx-auto mb-4" style="max-width:560px">Tell us what you're trying to achieve and we'll recommend the right combination of services.</p>
+                <a href="<?= e(wa_link(setting('schedule_wa_message', 'Hi Startout AI, I would like to schedule a consultation.'))) ?>" target="_blank" rel="noopener" class="btn btn-light-solid btn-lg px-4 py-3">
+                    <i class="fa-solid fa-calendar-check me-2"></i>Schedule Consultation
+                </a>
             </div>
         </div>
     </div>
 </section>
-
-<?= $this->include('templates/footer') ?>

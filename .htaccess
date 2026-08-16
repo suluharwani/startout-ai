@@ -1,0 +1,20 @@
+# ─────────────────────────────────────────────────────────────
+#  Front controller — route everything through index.php
+# ─────────────────────────────────────────────────────────────
+Options -Indexes
+RewriteEngine On
+
+# If the request is not a real file or directory, route to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
+
+# Block access to sensitive files/folders
+<FilesMatch "^(\.env|\.env\.example|composer\.(json|lock))$">
+    Require all denied
+</FilesMatch>
+
+# Disable directory listing
+<IfModule mod_autoindex.c>
+    Options -Indexes
+</IfModule>
