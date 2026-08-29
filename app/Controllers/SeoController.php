@@ -28,7 +28,7 @@ final class SeoController extends Controller
 
         $static = [
             '', '/about', '/services', '/start-journey',
-            '/resources', '/careers', '/join', '/contact',
+            '/resources', '/careers', '/contact',
         ];
 
         $urls = $static;

@@ -14,47 +14,11 @@ $industries = $industries ?? [];
             <a href="<?= e(url($hero['link'])) ?>" class="btn btn-primary btn-lg px-4 py-3">
                 <i class="fa-solid fa-arrow-right me-2"></i><?= e($hero['button']) ?>
             </a>
-            <a href="<?= url('/services/data-annotation') ?>" class="btn btn-outline btn-lg px-4 py-3">
-                <i class="fa-solid fa-brain me-2"></i>Customer Experience AI
-            </a>
         </div>
         <div class="hero-trust reveal">
-            <span><i class="fa-solid fa-circle-check"></i> Human-in-the-loop</span>
+            <span><i class="fa-solid fa-circle-check"></i> Dedicated remote teams</span>
             <span><i class="fa-solid fa-circle-check"></i> 24/7 operations</span>
-            <span><i class="fa-solid fa-circle-check"></i> Yogyakarta, Indonesia</span>
             <span><i class="fa-solid fa-circle-check"></i> Enterprise-grade security</span>
-        </div>
-    </div>
-</section>
-
-<!-- ══════════ Stats ══════════ -->
-<section class="stats-strip">
-    <div class="container">
-        <div class="row g-0">
-            <div class="col-6 col-md-3 reveal">
-                <div class="stat-box">
-                    <h3>24/7</h3>
-                    <p>Always-on coverage</p>
-                </div>
-            </div>
-            <div class="col-6 col-md-3 reveal">
-                <div class="stat-box">
-                    <h3>60%</h3>
-                    <p>Faster response times</p>
-                </div>
-            </div>
-            <div class="col-6 col-md-3 reveal">
-                <div class="stat-box">
-                    <h3>100+</h3>
-                    <p>Brands supported</p>
-                </div>
-            </div>
-            <div class="col-6 col-md-3 reveal">
-                <div class="stat-box">
-                    <h3>98%</h3>
-                    <p>Client satisfaction</p>
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -75,8 +39,8 @@ $industries = $industries ?? [];
         <div class="bento-grid">
             <div class="bento-card span-6 reveal">
                 <div class="bc-icon" style="background:var(--primary-soft);color:var(--primary)"><i class="fa-solid fa-arrows-spin"></i></div>
-                <h3>People + AI, orchestrated</h3>
-                <p>We blend intelligent automation with expert human teams — AI handles the volume, people handle the nuance, judgment and empathy.</p>
+                <h3>Your operations, orchestrated</h3>
+                <p>We manage the people, processes and performance end-to-end — so you get consistent, high-quality output without the overhead.</p>
             </div>
             <div class="bento-card span-6 reveal">
                 <div class="bc-icon" style="background:rgba(123,47,247,.12);color:var(--accent)"><i class="fa-solid fa-shield-halved"></i></div>
@@ -91,7 +55,7 @@ $industries = $industries ?? [];
             <div class="bento-card span-4 reveal">
                 <div class="bc-icon" style="background:var(--primary-soft);color:var(--primary)"><i class="fa-solid fa-globe"></i></div>
                 <h3>Global reach</h3>
-                <p>Multi-language, multi-timezone coverage delivered from our hub in Yogyakarta, Indonesia.</p>
+                <p>Multi-language, multi-timezone coverage from dedicated remote teams around the world.</p>
             </div>
             <div class="bento-card span-4 reveal">
                 <div class="bc-icon" style="background:rgba(123,47,247,.12);color:var(--accent)"><i class="fa-solid fa-gauge-high"></i></div>
@@ -150,35 +114,6 @@ $industries = $industries ?? [];
 </section>
 <?php endif; ?>
 
-<!-- ══════════ Testimonials ══════════ -->
-<?php if (!empty($testimonials)): ?>
-<section class="section section-alt">
-    <div class="container">
-        <div class="section-head text-center mb-5 reveal">
-            <span class="eyebrow" style="justify-content:center">Testimonials</span>
-            <h2>Trusted by teams like yours</h2>
-        </div>
-        <div class="row g-4">
-            <?php foreach ($testimonials as $i => $t): ?>
-            <div class="col-md-4 reveal">
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="quote">“<?= e($t['content']) ?>”</p>
-                    <div class="d-flex align-items-center gap-3">
-                        <div class="t-avatar"><?= e(strtoupper(mb_substr($t['name'], 0, 1))) ?></div>
-                        <div class="t-meta">
-                            <h6><?= e($t['name']) ?></h6>
-                            <span><?= e(trim(($t['role'] ?? '') . ($t['company'] ? ' · ' . $t['company'] : ''))) ?></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</section>
-<?php endif; ?>
-
 <!-- ══════════ FAQ ══════════ -->
 <?php if (!empty($faqs)): ?>
 <section class="section">
@@ -212,10 +147,10 @@ $industries = $industries ?? [];
         <div class="cta-banner reveal">
             <div class="container">
                 <span class="eyebrow" style="color:#ffb27a;justify-content:center">Ready when you are</span>
-                <h2 class="mb-3">Let's build your harmonized operation</h2>
-                <p class="mx-auto mb-4" style="max-width:620px">Talk to our team about your goals — we'll show you exactly how people and AI can work together for your business.</p>
+                <h2 class="mb-3">Let's build your remote operation</h2>
+                <p class="mx-auto mb-4" style="max-width:620px">Talk to our team about your goals — we'll show you exactly how a dedicated remote team can support your business.</p>
                 <div class="d-flex justify-content-center gap-3 flex-wrap">
-                    <a href="<?= e(wa_link(setting('schedule_wa_message', 'Hi Startout AI, I would like to schedule a consultation.'))) ?>" target="_blank" rel="noopener" class="btn btn-light-solid btn-lg px-4 py-3">
+                    <a href="<?= e(wa_link(setting('schedule_wa_message', 'Hi Motrive, I would like to schedule a consultation.'))) ?>" target="_blank" rel="noopener" class="btn btn-light-solid btn-lg px-4 py-3">
                         <i class="fa-solid fa-calendar-check me-2"></i>Schedule Consultation
                     </a>
                     <a href="<?= url('/contact') ?>" class="btn btn-ghost-light btn-lg px-4 py-3">

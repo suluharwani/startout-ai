@@ -71,7 +71,6 @@ $active       = current_path();
                         <div class="dp-list">
                             <a class="dp-item" href="<?= url('/about') ?>"><span class="dp-icon"><i class="fa-solid fa-building"></i></span><span class="dp-name">About us</span></a>
                             <a class="dp-item" href="<?= url('/careers') ?>"><span class="dp-icon"><i class="fa-solid fa-briefcase"></i></span><span class="dp-name">Careers</span></a>
-                            <a class="dp-item" href="<?= url('/join') ?>"><span class="dp-icon"><i class="fa-solid fa-user-plus"></i></span><span class="dp-name">Join us</span></a>
                             <a class="dp-item" href="<?= url('/contact') ?>"><span class="dp-icon"><i class="fa-solid fa-envelope"></i></span><span class="dp-name">Contact</span></a>
                         </div>
                     </div>
@@ -85,7 +84,7 @@ $active       = current_path();
                 <i class="fa-solid fa-moon icon-moon"></i>
                 <i class="fa-solid fa-sun icon-sun"></i>
             </button>
-            <a href="<?= e(wa_link(setting('schedule_wa_message', 'Hi Startout AI, I would like to schedule a consultation.'))) ?>"
+            <a href="<?= e(wa_link(setting('schedule_wa_message', 'Hi Motrive, I would like to schedule a consultation.'))) ?>"
                target="_blank" rel="noopener" class="btn btn-primary btn-sm-cta d-none d-md-inline-flex">
                 <i class="fa-solid fa-calendar-check me-2"></i> Schedule Consultation
             </a>
@@ -113,13 +112,12 @@ $active       = current_path();
                 <span class="mm-label">Company</span>
                 <a href="<?= url('/about') ?>">About us</a>
                 <a href="<?= url('/careers') ?>">Careers</a>
-                <a href="<?= url('/join') ?>">Join us</a>
                 <a href="<?= url('/contact') ?>">Contact</a>
                 <a href="<?= url('/resources') ?>">Resources</a>
             </div>
         </nav>
         <div class="mm-cta">
-            <a href="<?= e(wa_link(setting('schedule_wa_message', 'Hi Startout AI, I would like to schedule a consultation.'))) ?>" target="_blank" rel="noopener" class="btn btn-primary w-100">
+            <a href="<?= e(wa_link(setting('schedule_wa_message', 'Hi Motrive, I would like to schedule a consultation.'))) ?>" target="_blank" rel="noopener" class="btn btn-primary w-100">
                 <i class="fa-solid fa-calendar-check me-2"></i> Schedule Consultation
             </a>
         </div>

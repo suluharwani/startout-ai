@@ -97,7 +97,7 @@ $val = fn (string $k): string => (string) ($settings[$k] ?? '');
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">Primary button link</label>
-                    <input type="text" class="form-control" name="hero_button_link" value="<?= e($val('hero_button_link')) ?>" placeholder="/start-journey">
+                    <input type="text" class="form-control" name="hero_button_link" value="<?= e($val('hero_button_link')) ?>" placeholder="/contact">
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">Intro kicker</label>
@@ -198,6 +198,24 @@ $val = fn (string $k): string => (string) ($settings[$k] ?? '');
                 <div class="col-md-12">
                     <label class="form-label">Copyright text <span class="form-text">(use {year} for the current year)</span></label>
                     <input type="text" class="form-control" name="copyright_text" value="<?= e($val('copyright_text')) ?>">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jobs / ATS feed -->
+    <div class="adm-card mb-3">
+        <div class="card-head"><h3><i class="fa-solid fa-briefcase me-2" style="color:var(--adm-primary)"></i>Jobs &amp; ATS feed</h3></div>
+        <div class="card-body">
+            <div class="row g-3">
+                <div class="col-md-12">
+                    <label class="form-label">External jobs feed URL</label>
+                    <input type="text" class="form-control" name="jobs_feed_url" value="<?= e($val('jobs_feed_url')) ?>" placeholder="https://boards-api.greenhouse.io/v1/boards/{company}/jobs">
+                    <div class="form-text">
+                        Optional. Paste the public JSON feed from your recruiting system (Greenhouse, Lever, Workable,
+                        Recruitee, etc.) so new job postings appear on the Careers page automatically. Leave blank to use
+                        the jobs managed in the admin panel.
+                    </div>
                 </div>
             </div>
         </div>

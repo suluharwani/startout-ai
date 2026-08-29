@@ -186,11 +186,11 @@ final class Installer
         }
 
         $defaults = [
-            'company_name'           => 'Startout AI',
-            'company_logo_text'      => 'Startout AI',
+            'company_name'           => 'Motrive',
+            'company_logo_text'      => 'Motrive',
             'company_logo'           => '',
             'company_favicon'        => '',
-            'company_tagline'        => 'Harmonized AI for What Truly Matters',
+            'company_tagline'        => 'Full-service remote operations for ambitious brands',
             'company_email'          => 'hi@startoutai.com',
             'company_phone'          => '628602268666',
             'company_whatsapp'       => '628602268666',
@@ -201,18 +201,20 @@ final class Installer
             'company_x'              => 'https://x.com/startoutai',
             'company_facebook'       => 'https://www.facebook.com/startoutai',
             'company_instagram'      => 'https://www.instagram.com/startoutai',
-            'company_description'    => 'Startout AI combines cutting-edge AI with expert human teams to deliver customer experience, data annotation, trust & safety, talent and content moderation at scale.',
-            'hero_title'             => 'Harmonized AI for What Truly Matters',
-            'hero_subtitle'          => 'Achieve KPIs, scale support, nurture trust, and unify communities, while trimming costs. Startout AI makes it effortless.',
+            'company_description'    => 'Motrive is a full-service remote operations partner. We build, manage and scale dedicated remote teams for customer experience, data annotation, trust & safety, talent and content moderation.',
+            'hero_title'             => 'Remote Operations, Built Around You',
+            'hero_subtitle'          => 'Achieve KPIs, scale support, nurture trust and unify communities, while trimming costs. Motrive makes it effortless.',
             'hero_button_text'       => 'Start Your Journey',
+            'hero_button_link'       => '/contact',
             'home_intro_kicker'      => 'Who We Are',
-            'home_intro_title'       => 'Hybrid by Design. Intelligent by Nature.',
-            'home_intro_text'        => 'Startout AI isn\'t just about outsourcing — it\'s about orchestrating people and AI for maximum impact. From day one, we\'ve helped businesses thrive with a human-in-the-loop operating model.',
-            'about_heading'          => 'Pioneering Intelligent Customer Experiences',
-            'about_text'             => 'Startout AI combines cutting-edge artificial intelligence with deep human expertise to transform how businesses connect with their customers, communities and teams.',
-            'footer_about'           => 'We orchestrate people and AI to help ambitious brands deliver exceptional experiences, at any scale, anywhere in the world.',
-            'copyright_text'         => '© {year} Startout AI. All rights reserved.',
-            'schedule_wa_message'    => 'Hi Startout AI, I would like to schedule a consultation.',
+            'home_intro_title'       => 'Your Dedicated Remote Operations Partner',
+            'home_intro_text'        => 'Motrive builds and manages dedicated remote teams that keep your operations running — around the clock, at any scale. We handle the people, the processes and the quality so you can focus on growing your business.',
+            'about_heading'          => 'A Partner for Your Remote Operations',
+            'about_text'             => 'Motrive is a full-service remote operations company. We build, manage and scale dedicated teams that handle the day-to-day work behind ambitious brands — support, data, safety, talent and more.',
+            'footer_about'           => 'We build and manage dedicated remote teams that help ambitious brands deliver exceptional operations, at any scale, anywhere in the world.',
+            'copyright_text'         => '© {year} Motrive. All rights reserved.',
+            'schedule_wa_message'    => 'Hi Motrive, I would like to schedule a consultation.',
+            'jobs_feed_url'          => '',
         ];
 
         $stmt = $pdo->prepare(
@@ -234,20 +236,20 @@ final class Installer
         $pages = [
             [
                 'slug'              => 'about',
-                'title'             => 'Pioneering Intelligent Customer Experiences',
-                'subtitle'          => 'Our story, our mission and the people behind Startout AI.',
-                'content'           => '<p>Founded in Yogyakarta, Indonesia, Startout AI began with a simple mission: to orchestrate people and AI for maximum impact. What started as a small team of customer-experience specialists has grown into a global partner for brands that care deeply about how they show up online.</p><p>We combine breakthrough AI with expert human teams to deliver customer experience, data annotation, trust &amp; safety, talent and content moderation at any scale.</p>',
+                'title'             => 'Your Trusted Remote Operations Partner',
+                'subtitle'          => 'Our story, our mission and the team behind Motrive.',
+                'content'           => '<p>Motrive is a full-service remote operations company. We build, manage and scale dedicated teams that keep ambitious brands running smoothly — customer experience, data annotation, trust &amp; safety, talent solutions, community and more.</p><p>We are proudly remote-first and fully outsourced. Our teams work as a natural extension of yours, with the processes, training and quality controls to deliver consistent results around the clock.</p>',
                 'meta_title'        => 'About Us',
-                'meta_description'  => 'Learn about Startout AI — our story, mission, values and leadership team.',
+                'meta_description'  => 'Learn about Motrive — our story, mission and values.',
                 'is_active'         => 1,
             ],
             [
                 'slug'              => 'resources',
                 'title'             => 'Guides, Insights & Case Studies',
-                'subtitle'          => 'Practical thinking on AI, customer experience, trust & safety and modern operations.',
-                'content'           => '<h3>The Human-in-the-Loop Playbook</h3><p>AI handles the repetitive volume; people handle nuance, judgment and empathy. This playbook walks through how to design a hybrid operation that scales quality, not just volume.</p><h3>Content Moderation as a Growth Engine</h3><p>Moderation is often treated as a cost center. This case study shows how a unified trust &amp; safety program became a retention driver for a global social platform.</p><h3>Launching CX in 30 Days</h3><p>A step-by-step guide to ramping a fully-staffed customer experience operation — people, tooling, QA and reporting — in under a month.</p>',
+                'subtitle'          => 'Practical thinking on remote operations, customer experience, trust & safety and modern work.',
+                'content'           => '<h3>The Remote Operations Playbook</h3><p>How to design a remote operation that scales quality, not just volume. People, tooling, QA and reporting — built to grow with you.</p><h3>Content Moderation as a Growth Engine</h3><p>Moderation is often treated as a cost center. This case study shows how a unified trust &amp; safety program became a retention driver for a global social platform.</p><h3>Launching CX in 30 Days</h3><p>A step-by-step guide to ramping a fully-staffed customer experience operation — people, tooling, QA and reporting — in under a month.</p>',
                 'meta_title'        => 'Resources',
-                'meta_description'  => 'Guides, case studies and insights from Startout AI.',
+                'meta_description'  => 'Guides, case studies and insights from Motrive.',
                 'is_active'         => 1,
             ],
         ];
@@ -303,11 +305,11 @@ final class Installer
             [
                 'slug'   => 'data-annotation',
                 'name'   => 'Data Annotation',
-                'tagline' => 'High-quality training data, delivered at scale.',
+                'tagline' => 'Accurate, scalable data services, delivered on time.',
                 'icon'   => 'fa-solid fa-bullseye',
                 'featured' => 0,
-                'short_description' => 'High-accuracy training data and model evaluation built by specialists who understand the detail.',
-                'description' => '<p>Every intelligent system begins with exceptional data. Startout AI\'s Data Annotation practice delivers precise, scalable training data that powers everything from computer vision to natural language models.</p><p>Our specialist teams combine rigorous QA with domain expertise to keep your models learning the right things — annotation, labeling, generative AI and RLHF included.</p><ul><li>Image, video, text &amp; audio annotation</li><li>Generative AI &amp; RLHF data pipelines</li><li>Model evaluation &amp; golden datasets</li><li>Multi-language and domain-specific labeling</li></ul>',
+                'short_description' => 'Precise data annotation and labeling handled by specialists who understand the detail.',
+                'description' => '<p>Every data-driven system begins with quality data. Motrive\'s Data Annotation practice delivers precise, scalable annotation and labeling services built by specialists who understand the detail.</p><p>Our teams combine rigorous QA with domain expertise to keep your pipelines accurate and consistent — annotation, labeling and data preparation, all at scale.</p><ul><li>Image, video, text &amp; audio annotation</li><li>Data labeling &amp; preparation</li><li>Quality review &amp; validation</li><li>Multi-language and domain-specific labeling</li></ul>',
             ],
             [
                 'slug'   => 'trust-safety',
@@ -316,7 +318,7 @@ final class Installer
                 'icon'   => 'fa-solid fa-shield-halved',
                 'featured' => 0,
                 'short_description' => 'End-to-end trust, safety and content moderation as a single, unified program.',
-                'description' => '<p>Trust &amp; Safety covers the full lifecycle of keeping your platform safe: proactive content moderation, community management, policy tuning and crisis response.</p><p>Startout AI originated the modern moderation operating model. We combine breakthrough detection algorithms with expert community managers to shield your brand and your users from online toxicity around the clock.</p><ul><li>Content moderation at scale (text, image, video, audio)</li><li>Community management &amp; policy operations</li><li>Escalations, appeals &amp; crisis response</li><li>Data, security &amp; compliance controls</li></ul>',
+                'description' => '<p>Trust &amp; Safety covers the full lifecycle of keeping your platform safe: proactive content moderation, community management, policy tuning and crisis response.</p><p>Motrive runs a proven moderation operating model. Our expert teams shield your brand and your users from harmful content around the clock, following your policies with consistency and care.</p><ul><li>Content moderation at scale (text, image, video, audio)</li><li>Community management &amp; policy operations</li><li>Escalations, appeals &amp; crisis response</li><li>Data, security &amp; compliance controls</li></ul>',
             ],
             [
                 'slug'   => 'talent-solution',
@@ -324,7 +326,7 @@ final class Installer
                 'tagline' => 'The right people, at the right time, ready to perform.',
                 'icon'   => 'fa-solid fa-user-group',
                 'featured' => 0,
-                'short_description' => 'Flexible, vetted teams of customer experience and AI operations specialists.',
+                'short_description' => 'Flexible, vetted teams of remote operations specialists.',
                 'description' => '<p>Scale your operations without the overhead. Our Talent Solution gives you access to vetted, trained specialists who embed into your workflow and start delivering from day one.</p><p>Whether you need frontline support, data specialists or community managers, we recruit, train and manage the talent so you can focus on the outcome.</p><ul><li>Dedicated &amp; on-demand staffing</li><li>Industry-specific training programs</li><li>Performance management &amp; QA</li><li>Seamless ramp-up and handover</li></ul>',
             ],
             [
@@ -334,7 +336,7 @@ final class Installer
                 'icon'   => 'fa-solid fa-hashtag',
                 'featured' => 0,
                 'short_description' => 'Moderation, engagement and community management for the world\'s biggest platforms.',
-                'description' => '<p>Social media never sleeps — and neither do we. Startout AI manages your social care operations end-to-end: moderation, engagement, brand protection and community growth.</p><p>Our teams combine cultural fluency with platform expertise to keep conversations safe, on-brand and human.</p><ul><li>24/7 social moderation &amp; engagement</li><li>Community management &amp; growth</li><li>Brand safety &amp; crisis monitoring</li><li>Reporting &amp; sentiment analytics</li></ul>',
+                'description' => '<p>Social media never sleeps — and neither do we. Motrive manages your social care operations end-to-end: moderation, engagement, brand protection and community growth.</p><p>Our teams combine cultural fluency with platform expertise to keep conversations safe, on-brand and human.</p><ul><li>24/7 social moderation &amp; engagement</li><li>Community management &amp; growth</li><li>Brand safety &amp; crisis monitoring</li><li>Reporting &amp; sentiment analytics</li></ul>',
             ],
             [
                 'slug'   => 'gaming-entertainment',
@@ -343,7 +345,7 @@ final class Installer
                 'icon'   => 'fa-solid fa-gamepad',
                 'featured' => 1,
                 'short_description' => 'Player support, moderation and community care built for the world of gaming.',
-                'description' => '<p>Great games deserve great player experiences. Startout AI powers support, moderation and community programs for gaming and entertainment brands worldwide.</p><p>From in-game ticketing to live-ops moderation, our specialists are fluent in the culture and cadence of modern players.</p><ul><li>Player support &amp; live-ops care</li><li>In-game moderation &amp; anti-toxicity</li><li>Community &amp; creator programs</li><li>UGC review &amp; ratings curation</li></ul>',
+                'description' => '<p>Great games deserve great player experiences. Motrive powers support, moderation and community programs for gaming and entertainment brands worldwide.</p><p>From in-game ticketing to live-ops moderation, our specialists are fluent in the culture and cadence of modern players.</p><ul><li>Player support &amp; live-ops care</li><li>In-game moderation &amp; anti-toxicity</li><li>Community &amp; creator programs</li><li>UGC review &amp; ratings curation</li></ul>',
             ],
             [
                 'slug'   => 'fintech-banking',
@@ -352,7 +354,7 @@ final class Installer
                 'icon'   => 'fa-solid fa-building-columns',
                 'featured' => 1,
                 'short_description' => 'Secure, compliant support and dispute resolution for financial services.',
-                'description' => '<p>Financial services demand precision, security and trust. Startout AI delivers compliant customer care and operations for fintech, banking and payments brands.</p><p>Our specialists are trained on regulatory nuance, fraud prevention and data security, so every interaction protects your customers and your reputation.</p><ul><li>Multi-channel customer care</li><li>Fraud &amp; dispute resolution</li><li>KYC/AML operations support</li><li>Secure data handling &amp; compliance</li></ul>',
+                'description' => '<p>Financial services demand precision, security and trust. Motrive delivers compliant customer care and operations for fintech, banking and payments brands.</p><p>Our specialists are trained on regulatory nuance, fraud prevention and data security, so every interaction protects your customers and your reputation.</p><ul><li>Multi-channel customer care</li><li>Fraud &amp; dispute resolution</li><li>KYC/AML operations support</li><li>Secure data handling &amp; compliance</li></ul>',
             ],
             [
                 'slug'   => 'ecommerce-retail',
@@ -361,7 +363,7 @@ final class Installer
                 'icon'   => 'fa-solid fa-cart-shopping',
                 'featured' => 1,
                 'short_description' => 'Order support, CX and marketplace operations that convert and retain.',
-                'description' => '<p>From cart to doorstep, Startout AI keeps e-commerce and retail experiences fast, friendly and frictionless.</p><p>We power order support, marketplace operations and customer experience programs that lift conversion, CSAT and retention — during peak and beyond.</p><ul><li>Order &amp; delivery support</li><li>Marketplace &amp; seller operations</li><li>Returns, refunds &amp; escalations</li><li>Peak-season surge capacity</li></ul>',
+                'description' => '<p>From cart to doorstep, Motrive keeps e-commerce and retail experiences fast, friendly and frictionless.</p><p>We power order support, marketplace operations and customer experience programs that lift conversion, CSAT and retention — during peak and beyond.</p><ul><li>Order &amp; delivery support</li><li>Marketplace &amp; seller operations</li><li>Returns, refunds &amp; escalations</li><li>Peak-season surge capacity</li></ul>',
             ],
             [
                 'slug'   => 'process-automation',
@@ -369,8 +371,8 @@ final class Installer
                 'tagline' => 'Repetitive work, automated. People, amplified.',
                 'icon'   => 'fa-solid fa-robot',
                 'featured' => 0,
-                'short_description' => 'Automation and CRM integration that removes friction from your operations.',
-                'description' => '<p>Automation that never sleeps, intelligence that adapts, and human touch where it matters most. Startout AI reimagines your processes with advanced AI and people-powered insight working around the clock.</p><p>We fine-tune your stack with strategic guidance, real-time reporting and hands-on training, so your daily operations never miss a beat.</p><ul><li>Workflow automation &amp; RPA</li><li>CRM &amp; tool integration</li><li>Agent-assist &amp; deflection</li><li>Reporting, analytics &amp; continuous tuning</li></ul>',
+                'short_description' => 'Workflow automation and CRM integration that remove friction from your operations.',
+                'description' => '<p>Automation that never sleeps and human touch where it matters most. Motrive reimagines your processes with smart automation and people-powered insight working around the clock.</p><p>We streamline your stack with strategic guidance, real-time reporting and hands-on training, so your daily operations never miss a beat.</p><ul><li>Workflow automation &amp; RPA</li><li>CRM &amp; tool integration</li><li>Process optimization &amp; documentation</li><li>Reporting, analytics &amp; continuous tuning</li></ul>',
             ],
         ];
     }
@@ -383,8 +385,8 @@ final class Installer
         }
 
         $rows = [
-            ['Aisha Rahman', 'Head of Operations', 'Global Consumer Platform', 'Startout AI scaled our content moderation to millions of items a day without ever compromising on quality. They are a true extension of our team.'],
-            ['Daniel Kim', 'VP Customer Experience', 'E-commerce Group', 'Response times dropped by 60% and CSAT is at an all-time high. The hybrid AI + human model simply works.'],
+            ['Aisha Rahman', 'Head of Operations', 'Global Consumer Platform', 'Motrive scaled our content moderation to millions of items a day without ever compromising on quality. They are a true extension of our team.'],
+            ['Daniel Kim', 'VP Customer Experience', 'E-commerce Group', 'Response times dropped by 60% and CSAT is at an all-time high. Their dedicated remote team simply works.'],
             ['Maria Santos', 'Chief Product Officer', 'Fintech Startup', 'Compliant, secure and remarkably responsive. Their financial services team understands our industry better than anyone we have worked with.'],
             ['James Osei', 'Community Director', 'Gaming Studio', 'Player sentiment has never been healthier. Their moderation and community teams are fast, empathetic and culturally spot-on.'],
         ];
@@ -413,9 +415,9 @@ final class Installer
         }
 
         $rows = [
-            ['Alex Johnson', 'CEO & Co-Founder', 'Building the bridge between people and AI.', 'https://www.linkedin.com/company/startout-ai/'],
-            ['Sarah Chen', 'Chief Technology Officer', 'Leading AI research and platform engineering.', 'https://www.linkedin.com/company/startout-ai/'],
-            ['Michael Rodriguez', 'Chief Operations Officer', 'Delivering excellence across global delivery centers.', 'https://www.linkedin.com/company/startout-ai/'],
+            ['Alex Johnson', 'CEO & Co-Founder', 'Building dedicated remote teams that deliver.', 'https://www.linkedin.com/company/startout-ai/'],
+            ['Sarah Chen', 'Chief Operations Officer', 'Leading our global remote operations.', 'https://www.linkedin.com/company/startout-ai/'],
+            ['Michael Rodriguez', 'Chief Delivery Officer', 'Delivering excellence across global remote teams.', 'https://www.linkedin.com/company/startout-ai/'],
             ['Priya Nair', 'VP, Trust & Safety', 'Protecting platforms and communities worldwide.', 'https://www.linkedin.com/company/startout-ai/'],
         ];
 
@@ -443,11 +445,11 @@ final class Installer
         }
 
         $rows = [
-            ['AI Data Annotation Specialist', 'Operations', 'Yogyakarta, Indonesia', 'Full-time', 'Produce and QA high-quality training data for computer vision and NLP models.'],
-            ['Trust & Safety Analyst', 'Operations', 'Yogyakarta, Indonesia', 'Full-time', 'Moderate content and enforce platform policies with accuracy and empathy.'],
-            ['Customer Experience Specialist', 'Operations', 'Yogyakarta, Indonesia', 'Full-time', 'Deliver outstanding support across chat, email and social channels.'],
-            ['Community Manager', 'Operations', 'Yogyakarta, Indonesia', 'Full-time', 'Grow and protect engaged communities for gaming and entertainment brands.'],
-            ['Social Media Moderator', 'Operations', 'Yogyakarta, Indonesia', 'Full-time', 'Keep social conversations safe, on-brand and human, 24/7.'],
+            ['Data Annotation Specialist', 'Operations', 'Remote', 'Full-time', 'Produce and QA accurate, consistent annotation and labeling work for our clients.'],
+            ['Trust & Safety Analyst', 'Operations', 'Remote', 'Full-time', 'Moderate content and enforce platform policies with accuracy and empathy.'],
+            ['Customer Experience Specialist', 'Operations', 'Remote', 'Full-time', 'Deliver outstanding support across chat, email and social channels.'],
+            ['Community Manager', 'Operations', 'Remote', 'Full-time', 'Grow and protect engaged communities for gaming and entertainment brands.'],
+            ['Social Media Moderator', 'Operations', 'Remote', 'Full-time', 'Keep social conversations safe, on-brand and human, 24/7.'],
         ];
 
         $stmt = $pdo->prepare(
@@ -475,7 +477,7 @@ final class Installer
         }
 
         $rows = [
-            ['How does Startout AI combine AI with human teams?', 'We orchestrate a human-in-the-loop operating model: AI handles the repetitive volume, expert humans handle nuance, judgment and empathy. The result is speed and quality that neither could achieve alone.'],
+            ['How does Motrive build and manage remote teams?', 'We recruit, train and manage dedicated remote teams that operate as a natural extension of yours. From onboarding to QA to reporting, we handle the people and the process so you can focus on outcomes.'],
             ['Which industries do you specialize in?', 'We serve gaming & entertainment, fintech & banking, e-commerce & retail, and more — with dedicated practices for data annotation, trust & safety, social media, talent and process automation.'],
             ['How fast can we launch?', 'Most programs launch within 2–4 weeks. We offer phased rollouts and surge capacity for peaks so you can scale without friction.'],
             ['Is my data secure?', 'Yes. We apply enterprise-grade security controls, strict data handling policies and compliance-ready processes across every engagement.'],

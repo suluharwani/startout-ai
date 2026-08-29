@@ -9,7 +9,7 @@ $team = $team ?? [];
             <a href="<?= url('/') ?>">Home</a><i class="fa-solid fa-chevron-right"></i><span>About Us</span>
         </div>
         <span class="eyebrow">Who we are</span>
-        <h1><?= e($page['title'] ?? setting('about_heading', 'Pioneering Intelligent Customer Experiences')) ?></h1>
+        <h1><?= e($page['title'] ?? setting('about_heading', 'Your Trusted Remote Operations Partner')) ?></h1>
         <p class="lead mb-0" style="max-width:660px"><?= e($page['subtitle'] ?? setting('about_text')) ?></p>
     </div>
 </section>
@@ -19,12 +19,12 @@ $team = $team ?? [];
         <div class="row align-items-center g-5">
             <div class="col-lg-6 reveal">
                 <span class="eyebrow">Our story</span>
-                <h2 class="mb-4">Orchestrating people and AI since day one</h2>
+                <h2 class="mb-4">Building dedicated remote teams since day one</h2>
                 <?php if ($page && !empty($page['content'])): ?>
                     <?= $page['content'] /* trusted admin HTML */ ?>
                 <?php else: ?>
-                    <p>Startout AI combines cutting-edge artificial intelligence with deep human expertise to transform how businesses connect with their customers, communities and teams.</p>
-                    <p>From a small team of specialists in Yogyakarta, Indonesia, we've grown into a trusted partner for brands that care deeply about how they show up online — at any scale, in any timezone.</p>
+                    <p>Motrive builds and manages dedicated remote teams that keep your operations running smoothly — customer experience, content moderation, data services and more.</p>
+                    <p>From our hub in Yogyakarta, Indonesia, we've grown into a trusted partner for brands that care deeply about how they show up online — at any scale, in any timezone.</p>
                 <?php endif; ?>
             </div>
             <div class="col-lg-6 reveal">
@@ -33,8 +33,8 @@ $team = $team ?? [];
                     <div class="timeline">
                         <div class="timeline-item">
                             <span class="tl-year">Founded</span>
-                            <h5>Startout AI is born</h5>
-                            <p>Launched in Yogyakarta, Indonesia with a focus on AI-powered customer experience.</p>
+                            <h5>Motrive is born</h5>
+                            <p>Launched in Yogyakarta, Indonesia with a focus on remote operational outsourcing.</p>
                         </div>
                         <div class="timeline-item">
                             <span class="tl-year">Scale</span>
@@ -43,8 +43,8 @@ $team = $team ?? [];
                         </div>
                         <div class="timeline-item">
                             <span class="tl-year">Today</span>
-                            <h5>A harmonized AI partner</h5>
-                            <p>Data annotation, talent, social, industries and automation — all under one roof.</p>
+                            <h5>One partner, all operations</h5>
+                            <p>Data services, talent, social, industries and automation — all under one roof.</p>
                         </div>
                     </div>
                 </div>
@@ -91,34 +91,6 @@ $team = $team ?? [];
         </div>
     </div>
 </section>
-
-<?php if (!empty($team)): ?>
-<section class="section">
-    <div class="container">
-        <div class="section-head text-center mb-5 reveal">
-            <span class="eyebrow" style="justify-content:center">Leadership</span>
-            <h2>Meet the team</h2>
-            <p class="sub mx-auto">The people steering Startout AI forward.</p>
-        </div>
-        <div class="row g-4">
-            <?php foreach ($team as $member): ?>
-            <div class="col-md-6 col-lg-3 reveal">
-                <div class="team-card">
-                    <div class="t-photo"><?= e(strtoupper(mb_substr($member['name'], 0, 1))) ?></div>
-                    <h4><?= e($member['name']) ?></h4>
-                    <div class="role"><?= e($member['position']) ?></div>
-                    <p><?= e($member['bio']) ?></p>
-                    <div class="t-social">
-                        <a href="<?= e($member['linkedin'] ?: setting('company_linkedin')) ?>" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="mailto:<?= e(company_email()) ?>" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-                    </div>
-                </div>
-            </div>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</section>
-<?php endif; ?>
 
 <section class="section section-alt">
     <div class="container">

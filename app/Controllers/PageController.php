@@ -4,11 +4,9 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use App\Models\Faq;
-use App\Models\Job;
+use App\Models\JobFeed;
 use App\Models\Page;
 use App\Models\Service;
-use App\Models\TeamMember;
-use App\Models\Testimonial;
 
 /**
  * Public page controller.
@@ -18,17 +16,15 @@ final class PageController extends Controller
     public function home(): void
     {
         $this->view('home', [
-            'pageTitle'    => setting('company_name', 'Startout AI'),
+            'pageTitle'    => setting('company_name', 'Motrive'),
             'pageMeta'     => setting('company_description'),
             'hero'         => [
-                'title'    => setting('hero_title', 'Harmonized AI for What Truly Matters'),
+                'title'    => setting('hero_title', 'Remote Operations, Built Around You'),
                 'subtitle' => setting('hero_subtitle'),
                 'button'   => setting('hero_button_text', 'Start Your Journey'),
-                'link'     => setting('hero_button_link', '/start-journey'),
+                'link'     => setting('hero_button_link', '/contact'),
             ],
             'services'     => Service::active(),
-            'testimonials' => Testimonial::active(),
-            'team'         => TeamMember::active(),
             'faqs'         => Faq::active(),
             'industries'   => Service::featured(),
         ]);
@@ -40,10 +36,8 @@ final class PageController extends Controller
 
         $this->view('about', [
             'pageTitle'    => 'About Us',
-            'pageMeta'     => 'Learn about ' . setting('company_name') . ' — our story, mission, values and leadership team.',
+            'pageMeta'     => 'Learn about ' . setting('company_name') . ' — our story, mission and values.',
             'page'         => $page,
-            'team'         => TeamMember::active(),
-            'testimonials' => Testimonial::active(),
         ]);
     }
 
@@ -70,7 +64,6 @@ final class PageController extends Controller
             'pageMeta'    => $service['short_description'],
             'service'     => $service,
             'other'       => Service::active(),
-            'testimonials'=> Testimonial::active(),
             'faqs'        => Faq::active(),
         ]);
     }
@@ -79,7 +72,7 @@ final class PageController extends Controller
     {
         $this->view('start-journey', [
             'pageTitle' => 'Start Your Journey',
-            'pageMeta'  => 'Schedule a consultation with ' . setting('company_name') . ' — based in Yogyakarta, Indonesia.',
+            'pageMeta'  => 'Schedule a consultation with ' . setting('company_name') . '.',
         ]);
     }
 
@@ -99,17 +92,9 @@ final class PageController extends Controller
     {
         $this->view('careers', [
             'pageTitle' => 'Careers',
-            'pageMeta'  => 'Join the team at ' . setting('company_name') . '. Explore open positions in Yogyakarta, Indonesia.',
-            'jobs'      => Job::active(),
-        ]);
-    }
-
-    public function join(): void
-    {
-        $this->view('join', [
-            'pageTitle' => 'Join Us',
-            'pageMeta'  => 'Be part of the customer experience revolution at ' . setting('company_name') . '.',
-            'jobs'      => Job::active(),
+            'pageMeta'  => 'Join the team at ' . setting('company_name') . '. Explore current openings and how we work.',
+            'jobs'      => JobFeed::jobs(),
+            'feedUrl'   => JobFeed::hasFeed() ? setting('jobs_feed_url') : '',
         ]);
     }
 

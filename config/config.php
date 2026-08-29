@@ -52,7 +52,7 @@ if (!defined('APP_ENV')) {
 }
 
 if (!defined('APP_NAME')) {
-    define('APP_NAME', $env['APP_NAME'] ?? 'Startout AI');
+    define('APP_NAME', $env['APP_NAME'] ?? 'Motrive');
 }
 
 if (!defined('APP_TIMEZONE')) {
@@ -64,7 +64,7 @@ if (!defined('APP_KEY')) {
 }
 
 if (!defined('SESSION_NAME')) {
-    define('SESSION_NAME', $env['SESSION_NAME'] ?? 'startout_session');
+    define('SESSION_NAME', $env['SESSION_NAME'] ?? 'motrive_session');
 }
 
 if (!defined('DB_HOST')) {

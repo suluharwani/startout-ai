@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 /**
- * Startout AI — Front Controller
+ * Motrive — Front Controller
  * All requests are routed through this file.
  */
 
@@ -30,7 +30,6 @@ $router->get('/start-journey', 'PageController@startJourney');
 $router->get('/resources', 'PageController@resources');
 
 $router->get('/careers', 'PageController@careers');
-$router->get('/join', 'PageController@join');
 
 $router->get('/contact', 'ContactController@show');
 $router->post('/contact', 'ContactController@store');

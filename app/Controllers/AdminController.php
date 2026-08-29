@@ -54,6 +54,7 @@ final class AdminController extends Controller
         'about_heading', 'about_text',
         'footer_about', 'copyright_text',
         'schedule_wa_message',
+        'jobs_feed_url',
     ];
 
     public function settings(): void

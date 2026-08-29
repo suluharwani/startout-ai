@@ -5,7 +5,7 @@
  */
 $navServices = \App\Models\Service::active();
 $year        = date('Y');
-$copyright   = str_replace('{year}', (string) $year, setting('copyright_text', '© {year} Startout AI. All rights reserved.'));
+$copyright   = str_replace('{year}', (string) $year, setting('copyright_text', '© {year} Motrive. All rights reserved.'));
 ?>
 <footer class="site-footer">
     <div class="container">
@@ -16,7 +16,7 @@ $copyright   = str_replace('{year}', (string) $year, setting('copyright_text', '
                     <?php if (setting('company_logo')): ?>
                         <img class="brand-img" src="<?= e(asset(setting('company_logo'))) ?>" alt="<?= e(setting('company_name')) ?>">
                     <?php else: ?>
-                        <span class="brand-mark"><?= e(mb_substr(setting('company_logo_text', setting('company_name', 'S')), 0, 1)) ?></span>
+                        <span class="brand-mark"><?= e(mb_substr(setting('company_logo_text', setting('company_name', 'M')), 0, 1)) ?></span>
                     <?php endif; ?>
                     <span class="brand-text"><?= e(setting('company_logo_text', setting('company_name'))) ?></span>
                 </a>
@@ -45,7 +45,6 @@ $copyright   = str_replace('{year}', (string) $year, setting('copyright_text', '
                 <ul>
                     <li><a href="<?= url('/about') ?>">About us</a></li>
                     <li><a href="<?= url('/careers') ?>">Careers</a></li>
-                    <li><a href="<?= url('/join') ?>">Join us</a></li>
                     <li><a href="<?= url('/resources') ?>">Resources</a></li>
                     <li><a href="<?= url('/contact') ?>">Contact</a></li>
                 </ul>

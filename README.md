@@ -1,6 +1,6 @@
-# Startout AI — Company Profile (PHP)
+# Motrive — Company Profile (PHP)
 
-A modern, fully dynamic company profile for **Startout AI** built with **PHP 8** (no framework, custom router),
+A modern, fully dynamic company profile for **Motrive** built with **PHP 8** (no framework, custom router),
 **MySQL / MariaDB**, **Bootstrap 5** and a clean custom design system with light/dark themes.
 
 Everything on the site is content-managed through an **admin panel** (company profile, services,
@@ -34,7 +34,7 @@ testimonials, team, jobs, FAQs, static pages, contact inbox).
   - Custom favicon + meta description from settings
 - **Persistent dark/light mode** (remembers your choice across pages via `localStorage`)
 - **WhatsApp-first** "Schedule Consultation" buttons everywhere (`wa.me/628602268666`)
-- Floating WhatsApp button, scroll-reveal animations, responsive mobile menu
+- Scroll-reveal animations, responsive mobile menu
 
 ---
 
@@ -70,10 +70,10 @@ Copy `.env.example` to `.env` and adjust (the file is already present with defau
 
 ```ini
 APP_ENV=local
-APP_NAME="Startout AI"
+APP_NAME="Motrive"
 APP_TIMEZONE=Asia/Jakarta
 
-SESSION_NAME=startout_session
+SESSION_NAME=motrive_session
 APP_KEY=CHANGE_ME_TO_A_RANDOM_STRING
 
 # MySQL — matches the requirement: localhost / root / 12345 / 3306
@@ -134,8 +134,7 @@ and everyone signs in at `/admin/login`.
 | `/services/{slug}`       | Service detail (8 services)   |
 | `/start-journey`         | Start Your Journey            |
 | `/resources`             | Resources (guides & insights) |
-| `/careers`               | Careers (apply via LinkedIn)  |
-| `/join`                  | Join Us (apply via LinkedIn)  |
+| `/careers`               | Careers (ATS feed + apply)    |
 | `/contact`               | Contact (CSRF form → inbox)   |
 | `/sitemap.xml`           | XML sitemap (SEO)             |
 | `/robots.txt`            | robots directives (SEO)       |
@@ -188,18 +187,34 @@ Service slugs: `data-annotation`, `trust-safety`, `talent-solution`, `social-med
 
 ---
 
-## ✅ Revision checklist applied
+## ✅ Motrive rebrand checklist applied
 
-1. Home **Customer Experience AI** button now links to `/services/data-annotation`
-2. **Start Journey**: WhatsApp schedule + number `628602268666`, location only *Yogyakarta, Indonesia*,
-   email `hi@startoutai.com`, no empty placeholder boxes
+1. Home **Start Your Journey** button links to `/contact`; **Customer Experience AI** button removed
+2. **Start Journey**: WhatsApp schedule + number `628602268666`, email `hi@startoutai.com`,
+   no empty placeholder boxes
 3. **Data Annotation** page: *Start Your Journey* & *Schedule Consultation* both linked
 4. **Trust & Safety**: *Schedule Consultation* button present
 5. **Content Moderation** removed as a separate page — folded into Trust & Safety (footer included)
 6. **Talent Solution / Social Media / Gaming & Entertainment / Fintech & Banking / E-commerce & Retail /
    Process Automation**: *Schedule Consultation* all linked; "AI" removed from industry page titles
-7. **Join Us & Careers**: applications link to `https://www.linkedin.com/company/startout-ai/`
+7. **Careers**: openings come from an optional external ATS feed (see "Careers & ATS feed") or the
+   admin-managed jobs list, with LinkedIn as the fallback apply destination
 8. **Resources**: no subscription form / button
 9. **Footer**: Twitter icon → **X**, LinkedIn → company page, email icon → `hi@startoutai.com`
 10. **Dark/Light mode** persists across pages (`localStorage`)
+
+---
+
+## 🧲 Careers & ATS feed
+
+LinkedIn does not offer a public API for listing a company's job postings, so real-time sync has to come
+from your recruiting system instead. Most ATS platforms (Greenhouse, Lever, Workable, Recruitee, Ashby…)
+provide a public JSON feed of open jobs — the same feed that typically auto-posts to your LinkedIn page.
+
+1. In **Admin → Company Profile → Jobs & ATS feed**, paste your public jobs feed URL
+   (e.g. `https://boards-api.greenhouse.io/v1/boards/{company}/jobs`).
+2. The **Careers** page fetches that feed (cached for 5 minutes) and lists the openings with their apply
+   links automatically. If the feed is unavailable or not configured, it falls back to the jobs managed
+   in the admin panel.
+3. Supported formats: Greenhouse, Lever, and generic JSON arrays (`{ "data": [...] }`, `{ "results": [...] }`).
 

@@ -3,7 +3,7 @@
  * Main site layout.
  * Expected variables: $content (string), $pageTitle, $pageMeta.
  */
-$company         = setting('company_name', 'Startout AI');
+$company         = setting('company_name', 'Motrive');
 $pageTitleTmp    = (string) ($pageTitle ?? '');
 $siteTitle       = ($pageTitleTmp === '' || $pageTitleTmp === $company)
     ? $company
@@ -44,7 +44,7 @@ $favicon         = setting('company_favicon') ? asset(setting('company_favicon')
         <link rel="icon" href="<?= e($favicon) ?>">
         <link rel="apple-touch-icon" href="<?= e($favicon) ?>">
     <?php else: ?>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%23ff6a00'/><text x='50' y='68' font-size='52' font-family='Arial' font-weight='bold' text-anchor='middle' fill='white'>S</text></svg>">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%23ff6a00'/><text x='50' y='68' font-size='52' font-family='Arial' font-weight='bold' text-anchor='middle' fill='white'>M</text></svg>">
     <?php endif; ?>
 
     <!-- Structured data (Organization) -->
@@ -89,7 +89,7 @@ $favicon         = setting('company_favicon') ? asset(setting('company_favicon')
         // Apply saved theme before paint to avoid flash.
         (function () {
             var stored = null;
-            try { stored = localStorage.getItem('startout-theme'); } catch (e) {}
+            try { stored = localStorage.getItem('motrive-theme'); } catch (e) {}
             var theme = stored || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
             document.documentElement.setAttribute('data-theme', theme);
         })();
@@ -103,12 +103,6 @@ $favicon         = setting('company_favicon') ? asset(setting('company_favicon')
     </main>
 
     <?php require __DIR__ . '/footer.php'; ?>
-
-    <!-- Floating WhatsApp -->
-    <a href="<?= e(wa_link(setting('schedule_wa_message', 'Hi Startout AI, I would like to schedule a consultation.'))) ?>"
-       class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="<?= asset('/assets/js/script.js') ?>"></script>

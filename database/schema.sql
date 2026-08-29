@@ -1,5 +1,5 @@
 -- ═══════════════════════════════════════════════════════════════
---  Startout AI — Database schema (MySQL 5.7+ / 8.x / MariaDB)
+--  Motrive — Database schema (MySQL 5.7+ / 8.x / MariaDB)
 --  Import this file manually with phpMyAdmin, OR simply let the
 --  application auto-install it on first request (recommended).
 --

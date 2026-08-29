@@ -2,7 +2,6 @@
 /** Service detail page */
 $other = $other ?? [];
 $faqs  = $faqs ?? [];
-$testimonials = $testimonials ?? [];
 ?>
 <section class="service-hero">
     <div class="container">
@@ -17,7 +16,7 @@ $testimonials = $testimonials ?? [];
                 <h1><?= e($service['name']) ?></h1>
                 <p class="lead"><?= e($service['tagline'] ?? $service['short_description']) ?></p>
                 <div class="d-flex flex-wrap gap-3 mt-4">
-                    <a href="<?= e(wa_link(setting('schedule_wa_message', 'Hi Startout AI, I would like to schedule a consultation.'))) ?>" target="_blank" rel="noopener" class="btn btn-primary btn-lg px-4 py-3">
+                    <a href="<?= e(wa_link(setting('schedule_wa_message', 'Hi Motrive, I would like to schedule a consultation.'))) ?>" target="_blank" rel="noopener" class="btn btn-primary btn-lg px-4 py-3">
                         <i class="fa-solid fa-calendar-check me-2"></i>Schedule Consultation
                     </a>
                     <a href="<?= url('/start-journey') ?>" class="btn btn-outline btn-lg px-4 py-3">
@@ -57,7 +56,7 @@ $testimonials = $testimonials ?? [];
                     <div class="side-card">
                         <h5><i class="fa-solid fa-headset me-2" style="color:var(--primary)"></i> Talk to a specialist</h5>
                         <p class="small">Chat with our team on WhatsApp — we usually reply within minutes.</p>
-                        <a href="<?= e(wa_link('Hi Startout AI, I have a question about ' . $service['name'] . '.')) ?>" target="_blank" rel="noopener" class="btn btn-primary w-100">
+                        <a href="<?= e(wa_link('Hi Motrive, I have a question about ' . $service['name'] . '.')) ?>" target="_blank" rel="noopener" class="btn btn-primary w-100">
                             <i class="fa-brands fa-whatsapp me-2"></i>WhatsApp us
                         </a>
                     </div>
@@ -83,30 +82,3 @@ $testimonials = $testimonials ?? [];
     </div>
 </section>
 
-<?php if (!empty($testimonials)): ?>
-<section class="section section-alt">
-    <div class="container">
-        <div class="section-head text-center mb-5 reveal">
-            <span class="eyebrow" style="justify-content:center">Results</span>
-            <h2>What partners say</h2>
-        </div>
-        <div class="row g-4">
-            <?php foreach (array_slice($testimonials, 0, 3) as $t): ?>
-            <div class="col-md-4 reveal">
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="quote">“<?= e($t['content']) ?>”</p>
-                    <div class="d-flex align-items-center gap-3">
-                        <div class="t-avatar"><?= e(strtoupper(mb_substr($t['name'], 0, 1))) ?></div>
-                        <div class="t-meta">
-                            <h6><?= e($t['name']) ?></h6>
-                            <span><?= e(trim(($t['role'] ?? '') . ($t['company'] ? ' · ' . $t['company'] : ''))) ?></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</section>
-<?php endif; ?>

@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   Startout AI — front-end behaviors
+   Motrive — front-end behaviors
    ═══════════════════════════════════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function setTheme(theme) {
         root.setAttribute('data-theme', theme);
-        try { localStorage.setItem('startout-theme', theme); } catch (e) {}
+        try { localStorage.setItem('motrive-theme', theme); } catch (e) {}
     }
 
     if (themeToggle) {

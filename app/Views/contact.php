@@ -11,7 +11,7 @@ unset($_SESSION['_errors']);
         </div>
         <span class="eyebrow">Contact us</span>
         <h1>Let's talk about your needs</h1>
-        <p class="lead mb-0" style="max-width:640px">Send us a message or reach us directly — our team is ready to help you transform your customer interactions.</p>
+        <p class="lead mb-0" style="max-width:640px">Send us a message or reach us directly — our team is ready to help you build and manage your remote operations.</p>
     </div>
 </section>
 
@@ -126,7 +126,7 @@ unset($_SESSION['_errors']);
                         <p class="mb-0"><a href="<?= e(setting('company_linkedin')) ?>" target="_blank" rel="noopener"><?= e(setting('company_name')) ?> on LinkedIn</a></p>
                     </div>
 
-                    <a href="<?= e(wa_link(setting('schedule_wa_message', 'Hi Startout AI, I would like to schedule a consultation.'))) ?>" target="_blank" rel="noopener" class="btn btn-primary w-100 btn-lg">
+                    <a href="<?= e(wa_link(setting('schedule_wa_message', 'Hi Motrive, I would like to schedule a consultation.'))) ?>" target="_blank" rel="noopener" class="btn btn-primary w-100 btn-lg">
                         <i class="fa-brands fa-whatsapp fa-lg me-2"></i>Schedule Consultation
                     </a>
                 </div>

@@ -6,7 +6,7 @@
         </div>
         <span class="eyebrow">Start your journey</span>
         <h1>Let's build what truly matters</h1>
-        <p class="lead mb-0" style="max-width:640px">Schedule a free consultation with our team. We'll map your goals to the right people-and-AI operating model — no pressure, no jargon.</p>
+        <p class="lead mb-0" style="max-width:640px">Schedule a free consultation with our team. We'll map your goals to the right remote operations model — no pressure, no jargon.</p>
     </div>
 </section>
 
@@ -26,7 +26,7 @@
                     <div class="timeline-item reveal">
                         <span class="tl-year">Step 02</span>
                         <h5>Discovery &amp; scoping</h5>
-                        <p>We map your current operations, goals and constraints — then recommend the right blend of AI, talent and process.</p>
+                        <p>We map your current operations, goals and constraints — then recommend the right blend of people, process and technology.</p>
                     </div>
                     <div class="timeline-item reveal">
                         <span class="tl-year">Step 03</span>
@@ -47,7 +47,7 @@
                     <h3 class="mb-1">Schedule your consultation</h3>
                     <p class="text-muted mb-4">Choose whichever channel is easiest for you.</p>
 
-                    <a href="<?= e(wa_link(setting('schedule_wa_message', 'Hi Startout AI, I would like to schedule a consultation.'))) ?>" target="_blank" rel="noopener" class="btn btn-primary w-100 btn-lg mb-3">
+                    <a href="<?= e(wa_link(setting('schedule_wa_message', 'Hi Motrive, I would like to schedule a consultation.'))) ?>" target="_blank" rel="noopener" class="btn btn-primary w-100 btn-lg mb-3">
                         <i class="fa-brands fa-whatsapp fa-lg me-2"></i> Chat on WhatsApp
                     </a>
                     <a href="mailto:<?= e(company_email()) ?>" class="btn btn-outline w-100 btn-lg mb-4">
