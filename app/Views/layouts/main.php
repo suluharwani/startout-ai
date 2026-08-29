@@ -12,6 +12,7 @@ $metaDescription = $pageMeta ?? setting('company_description');
 $canonical       = url(current_path());
 $ogImage         = setting('company_logo') ? asset(setting('company_logo')) : '';
 $favicon         = setting('company_favicon') ? asset(setting('company_favicon')) : '';
+$faviconTouch    = $favicon ? preg_replace('/\.svg$/i', '.png', $favicon) : '';
 ?>
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
@@ -41,8 +42,8 @@ $favicon         = setting('company_favicon') ? asset(setting('company_favicon')
 
     <!-- Favicon -->
     <?php if ($favicon): ?>
-        <link rel="icon" href="<?= e($favicon) ?>">
-        <link rel="apple-touch-icon" href="<?= e($favicon) ?>">
+        <link rel="icon" href="<?= e($favicon) ?>" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="<?= e($faviconTouch ?: $favicon) ?>" sizes="180x180">
     <?php else: ?>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%23ff6a00'/><text x='50' y='68' font-size='52' font-family='Arial' font-weight='bold' text-anchor='middle' fill='white'>M</text></svg>">
     <?php endif; ?>
