@@ -149,6 +149,11 @@ a:hover { color: var(--primary-600); }
 }
 .footer-brand-logo .brand-img { height: 44px; }
 
+/* Swap the Motrive logo wordmark color to match the dark theme. */
+[data-theme="dark"] .brand-img[src$="motrive-logo.svg"] {
+    content: url('/assets/uploads/motrive-logo-dark.svg');
+}
+
 /* Nav */
 .main-nav { display: none; }
 
