@@ -191,16 +191,16 @@ final class Installer
             'company_logo'           => '',
             'company_favicon'        => '',
             'company_tagline'        => 'Full-service remote operations for ambitious brands',
-            'company_email'          => 'hi@startoutai.com',
+            'company_email'          => 'hi@motrive.com',
             'company_phone'          => '628602268666',
             'company_whatsapp'       => '628602268666',
             'company_address'        => 'Yogyakarta, Indonesia',
             'company_city'           => 'Yogyakarta',
             'company_country'        => 'Indonesia',
-            'company_linkedin'       => 'https://www.linkedin.com/company/startout-ai/',
-            'company_x'              => 'https://x.com/startoutai',
-            'company_facebook'       => 'https://www.facebook.com/startoutai',
-            'company_instagram'      => 'https://www.instagram.com/startoutai',
+            'company_linkedin'       => 'https://www.linkedin.com/company/motrive/',
+            'company_x'              => 'https://x.com/motrive',
+            'company_facebook'       => 'https://www.facebook.com/motrive',
+            'company_instagram'      => 'https://www.instagram.com/motrive',
             'company_description'    => 'Motrive is a full-service remote operations partner. We build, manage and scale dedicated remote teams for customer experience, data annotation, trust & safety, talent and content moderation.',
             'hero_title'             => 'Remote Operations, Built Around You',
             'hero_subtitle'          => 'Achieve KPIs, scale support, nurture trust and unify communities, while trimming costs. Motrive makes it effortless.',
@@ -415,10 +415,10 @@ final class Installer
         }
 
         $rows = [
-            ['Alex Johnson', 'CEO & Co-Founder', 'Building dedicated remote teams that deliver.', 'https://www.linkedin.com/company/startout-ai/'],
-            ['Sarah Chen', 'Chief Operations Officer', 'Leading our global remote operations.', 'https://www.linkedin.com/company/startout-ai/'],
-            ['Michael Rodriguez', 'Chief Delivery Officer', 'Delivering excellence across global remote teams.', 'https://www.linkedin.com/company/startout-ai/'],
-            ['Priya Nair', 'VP, Trust & Safety', 'Protecting platforms and communities worldwide.', 'https://www.linkedin.com/company/startout-ai/'],
+            ['Alex Johnson', 'CEO & Co-Founder', 'Building dedicated remote teams that deliver.', 'https://www.linkedin.com/company/motrive/'],
+            ['Sarah Chen', 'Chief Operations Officer', 'Leading our global remote operations.', 'https://www.linkedin.com/company/motrive/'],
+            ['Michael Rodriguez', 'Chief Delivery Officer', 'Delivering excellence across global remote teams.', 'https://www.linkedin.com/company/motrive/'],
+            ['Priya Nair', 'VP, Trust & Safety', 'Protecting platforms and communities worldwide.', 'https://www.linkedin.com/company/motrive/'],
         ];
 
         $stmt = $pdo->prepare(
@@ -481,7 +481,7 @@ final class Installer
             ['Which industries do you specialize in?', 'We serve gaming & entertainment, fintech & banking, e-commerce & retail, and more — with dedicated practices for data annotation, trust & safety, social media, talent and process automation.'],
             ['How fast can we launch?', 'Most programs launch within 2–4 weeks. We offer phased rollouts and surge capacity for peaks so you can scale without friction.'],
             ['Is my data secure?', 'Yes. We apply enterprise-grade security controls, strict data handling policies and compliance-ready processes across every engagement.'],
-            ['How do I schedule a consultation?', 'Simply tap the Schedule Consultation button anywhere on the site to chat with us directly on WhatsApp, or email us at hi@startoutai.com.'],
+            ['How do I schedule a consultation?', 'Simply tap the Schedule Consultation button anywhere on the site to chat with us directly on WhatsApp, or email us at hi@motrive.com.'],
         ];
 
         $stmt = $pdo->prepare(

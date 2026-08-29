@@ -152,7 +152,7 @@ function company_name(): string
 
 function company_email(): string
 {
-    return setting('company_email', 'hi@startoutai.com');
+    return setting('company_email', 'hi@motrive.com');
 }
 
 function company_phone(): string

@@ -76,7 +76,7 @@ if (!defined('DB_PORT')) {
 }
 
 if (!defined('DB_NAME')) {
-    define('DB_NAME', $env['DB_NAME'] ?? 'startoutai');
+    define('DB_NAME', $env['DB_NAME'] ?? 'motrive');
 }
 
 if (!defined('DB_USER')) {

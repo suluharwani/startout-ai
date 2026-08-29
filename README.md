@@ -49,9 +49,9 @@ testimonials, team, jobs, FAQs, static pages, contact inbox).
 
 ### Option A — Auto-install (recommended)
 
-1. Copy the project into your web root (e.g. XAMPP `htdocs/startoutai`).
+1. Copy the project into your web root (e.g. XAMPP `htdocs/motrive`).
 2. Make sure MySQL is running on `127.0.0.1:3306`.
-3. Open `http://localhost/startoutai/` in your browser.
+3. Open `http://localhost/motrive/` in your browser.
    - The app **creates the database + tables + seed content automatically** on the first request
      (credentials come from `.env`).
 4. Done.
@@ -79,7 +79,7 @@ APP_KEY=CHANGE_ME_TO_A_RANDOM_STRING
 # MySQL — matches the requirement: localhost / root / 12345 / 3306
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_NAME=startoutai
+DB_NAME=motrive
 DB_USER=root
 DB_PASS=12345
 ```
@@ -119,7 +119,7 @@ Then open `http://localhost:8000/`.
 first visitor registers the super-admin. After that, the registration screen is disabled
 and everyone signs in at `/admin/login`.
 
-> The original auto-seeded `admin@startoutai.com / admin123` account has been removed for
+> The original auto-seeded `admin@motrive.com / admin123` account has been removed for
 > security. If you upgraded from an earlier version, your existing account still works.
 
 ---
@@ -190,7 +190,7 @@ Service slugs: `data-annotation`, `trust-safety`, `talent-solution`, `social-med
 ## ✅ Motrive rebrand checklist applied
 
 1. Home **Start Your Journey** button links to `/contact`; **Customer Experience AI** button removed
-2. **Start Journey**: WhatsApp schedule + number `628602268666`, email `hi@startoutai.com`,
+2. **Start Journey**: WhatsApp schedule + number `628602268666`, email `hi@motrive.com`,
    no empty placeholder boxes
 3. **Data Annotation** page: *Start Your Journey* & *Schedule Consultation* both linked
 4. **Trust & Safety**: *Schedule Consultation* button present
@@ -200,7 +200,7 @@ Service slugs: `data-annotation`, `trust-safety`, `talent-solution`, `social-med
 7. **Careers**: openings come from an optional external ATS feed (see "Careers & ATS feed") or the
    admin-managed jobs list, with LinkedIn as the fallback apply destination
 8. **Resources**: no subscription form / button
-9. **Footer**: Twitter icon → **X**, LinkedIn → company page, email icon → `hi@startoutai.com`
+9. **Footer**: Twitter icon → **X**, LinkedIn → company page, email icon → `hi@motrive.com`
 10. **Dark/Light mode** persists across pages (`localStorage`)
 
 ---

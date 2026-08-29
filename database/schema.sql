@@ -3,12 +3,12 @@
 --  Import this file manually with phpMyAdmin, OR simply let the
 --  application auto-install it on first request (recommended).
 --
---  Database: startoutai (user: root / pass: 12345)
+--  Database: motrive (user: root / pass: 12345)
 -- ═══════════════════════════════════════════════════════════════
 
-CREATE DATABASE IF NOT EXISTS `startoutai`
+CREATE DATABASE IF NOT EXISTS `motrive`
     CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE `startoutai`;
+USE `motrive`;
 
 -- ── Settings (company profile, key/value) ──────────────────────
 CREATE TABLE IF NOT EXISTS `settings` (
@@ -140,5 +140,5 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- ── Default admin (password: admin123) ─────────────────────────
 -- The app also creates this automatically on first run.
 -- INSERT INTO `users` (`name`,`email`,`password`,`role`)
--- VALUES ('Administrator','admin@startoutai.com',
+-- VALUES ('Administrator','admin@motrive.com',
 --         '$2y$10$REPLACE_WITH_A_VALID_HASH','super_admin');

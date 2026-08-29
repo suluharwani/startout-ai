@@ -1,7 +1,7 @@
 <?php
 /**
  * Site footer.
- * Twitter logo replaced with X, LinkedIn → company page, email icon → hi@startoutai.com
+ * Twitter logo replaced with X, LinkedIn → company page, email icon → hi@motrive.com
  */
 $navServices = \App\Models\Service::active();
 $year        = date('Y');
@@ -22,8 +22,8 @@ $copyright   = str_replace('{year}', (string) $year, setting('copyright_text', '
                 </a>
                 <p><?= e(setting('footer_about')) ?></p>
                 <div class="social-row">
-                    <a href="<?= e(setting('company_linkedin', 'https://www.linkedin.com/company/startout-ai/')) ?>" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="<?= e(setting('company_x', 'https://x.com/startoutai')) ?>" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="<?= e(setting('company_linkedin', 'https://www.linkedin.com/company/motrive/')) ?>" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="<?= e(setting('company_x', 'https://x.com/motrive')) ?>" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
                     <a href="<?= e(setting('company_facebook', '#')) ?>" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="<?= e(setting('company_instagram', '#')) ?>" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                 </div>
