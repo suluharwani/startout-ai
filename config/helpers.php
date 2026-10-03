@@ -143,6 +143,60 @@ function setting(string $key, string $default = ''): string
     return array_key_exists($key, $all) ? (string) $all[$key] : $default;
 }
 
+/* ── Brand logo ─────────────────────────────────────────────── */
+
+/**
+ * Render the Motrive logo lockup.
+ *
+ * The mark and wordmark are drawn in CSS (see assets/css/style.css), so no
+ * image request is needed and both themes are covered by currentColor. The
+ * accessible name is a visually-hidden <span>, because the mark is a
+ * clip-path and the wordmark alone would read as "otrive".
+ *
+ * Returns the bare lockup. Callers supply their own link, because nesting a
+ * link inside a link is invalid HTML and browsers drop the inner element.
+ *
+ * When an admin uploads a logo image in Admin → Company Profile that file
+ * wins, so branding stays editable without a code change.
+ */
+function brand_logo(string $class = ''): string
+{
+    $name = company_name();
+    $logo = setting('company_logo');
+
+    /*
+ * The wordmark is "otrive" as ONE text node so the browser's own shaping,
+ * kerning and sidebearings apply — splitting it into runs measured as wrong
+ * spacing between "t" and "r".
+ *
+ * Only the "o" is drawn: Sora's "o" is 0.8957 wide against an x-height where
+ * the artwork's is 1.2212, and no single scaleX reconciles that with the
+ * 0.86–0.93 the other letters need. The "o" is therefore an element of its own
+ * placed before the text, and the text carries "trive" — the artwork's own
+ * spacing already accounts for the "o" that precedes it.
+ */
+$inner = $logo !== '' && preg_match('/\.(svg|png|jpe?g|webp|gif)$/i', $logo)
+        ? '<img class="brand-img" src="' . e(asset($logo)) . '" alt="' . e($name) . '">'
+        : '<span class="motrive-logo__mark" aria-hidden="true"></span>'
+          . '<span class="motrive-logo__word" aria-hidden="true">'
+          . '<span class="motrive-logo__o"></span>'
+          . '<span class="motrive-logo__text">trive</span>'
+          . '</span>'
+          . '<span class="visually-hidden">' . e($name) . '</span>';
+
+    return $class === '' ? $inner : '<span class="' . e($class) . '">' . $inner . '</span>';
+}
+
+/**
+ * Render the Motrive logo wrapped in a home link.
+ */
+function brand_logo_link(string $class = '', string $label = 'home'): string
+{
+    $name = company_name();
+    return '<a class="motrive-logo" href="' . e(url('/')) . '" aria-label="'
+        . e($name) . ' — ' . e($label) . '">' . brand_logo() . '</a>';
+}
+
 /* ── Company helpers ─────────────────────────────────────────── */
 
 function company_name(): string

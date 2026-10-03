@@ -8,13 +8,8 @@ unset($_SESSION['_errors']);
 <div class="adm-login-wrap">
     <div class="adm-login-card">
         <div class="brand">
-            <a href="<?= url('/') ?>" class="brand">
-                <?php if (setting('company_logo')): ?>
-                    <img class="brand-img" src="<?= e(asset(setting('company_logo'))) ?>" alt="<?= e(setting('company_name')) ?>">
-                <?php else: ?>
-                    <span class="brand-mark"><?= e(mb_substr(setting('company_name', 'S'), 0, 1)) ?></span>
-                    <span class="brand-text"><?= e(setting('company_name')) ?></span>
-                <?php endif; ?>
+            <a href="<?= url('/') ?>" class="motrive-logo">
+                <?= brand_logo() ?>
             </a>
         </div>
         <h1>Create Admin Account</h1>

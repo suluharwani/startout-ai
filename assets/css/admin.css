@@ -23,7 +23,89 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-a { text-decoration: none; }
+/* Inherit colour so the CSS logo (and every other link that has no explicit
+   colour) follows the surrounding text instead of the browser default blue. */
+a { text-decoration: none; color: inherit; }
+
+/* ── Motrive logo ──────────────────────────────────────────────
+   Same measured geometry as assets/css/style.css — the mark polygon is
+   traced from the source artwork, not redrawn by eye. Duplicated here
+   because the admin panel loads only this stylesheet.
+   ------------------------------------------------------------ */
+
+.visually-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+.motrive-logo {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 0.152em;
+    height: 1em;
+    font-size: 30px;
+    line-height: 1;
+    color: inherit;
+}
+.motrive-logo__mark {
+    flex: none;
+    width: 1.1707em;
+    height: 1em;
+    background: currentColor;
+    clip-path: polygon(
+        0% 43.90%,
+        99.48% 0%,
+        99.48% 99.39%,
+        80.21% 99.39%,
+        79.69% 31.71%,
+        60.42% 17.68%,
+        59.38% 98.78%,
+        39.58% 99.39%,
+        39.06% 45.73%,
+        20.83% 34.76%,
+        19.27% 99.39%,
+        0% 99.39%
+    );
+}
+
+/* The wordmark. Same derivation as style.css: Sora's "o" is 0.8957 wide against
+   an x-height where the artwork's is 1.2212 — needing scaleX 1.24 while the
+   other letters need 0.86–0.93 — so the "o" is drawn and "trive" is set in
+   Sora at 500, condensed to the artwork's span. */
+.motrive-logo__word {
+    display: inline-flex;
+    align-items: flex-end;
+    height: 0.6341em;
+    margin-top: 0.3110em;
+    color: currentColor;
+    white-space: nowrap;
+}
+.motrive-logo__o {
+    flex: none;
+    height: 0.6341em;
+    width: 0.7744em;
+    border: 0.1159em solid currentColor;
+    border-width: 0.1281em 0.1159em;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+.motrive-logo__text {
+    font-family: 'Sora', 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 1.1690em;
+    line-height: 1;
+    /* Same correction as style.css: Sora's content box is 1.2600 em, so
+       line-height: 1 puts the baseline 0.1600 em above the box bottom and the
+       wordmark rode 0.1870 lockup em above the drawn "o". */
+    transform: translateY(0.16em) scaleX(0.8212);
+    transform-origin: left bottom;
+    margin-left: 0.0162em;
+}
 
 /* Layout shell */
 .adm-shell { display: flex; min-height: 100vh; }
@@ -242,7 +324,12 @@ a { text-decoration: none; }
 /* Mobile */
 @media (max-width: 768px) {
     .adm-sidebar { width: 70px; flex-basis: 70px; }
-    .adm-brand span:not(.adm-brand-mark), .adm-nav a span, .adm-nav-label, .adm-sidefoot a span { display: none; }
+    .adm-brand-label, .adm-nav a span, .adm-nav-label, .adm-sidefoot a span { display: none; }
+    /* When the brand label is hidden the logo lockup becomes the whole
+       identity, so centre it and let the wordmark stay readable. */
+    .adm-brand .motrive-logo__word { display: none; }
+    .adm-brand .motrive-logo { font-size: 26px; }
+    .adm-brand { justify-content: center; }
     .adm-nav a { justify-content: center; }
     .adm-content { padding: 1rem; }
 }
@@ -273,6 +360,16 @@ body { background: linear-gradient(180deg, #f7f8fc 0%, #eef0f7 100%); }
     border-radius: 9px;
     background: #fff;
     padding: 3px 6px;
+}
+
+/* Motrive logo inside the admin sidebar. The sidebar is always dark,
+   so the mark and wordmark take the inherited #fff. */
+.adm-brand .motrive-logo { font-size: 30px; }
+.adm-brand-label {
+    opacity: .5;
+    font-size: .7rem;
+    display: block;
+    line-height: 1.1;
 }
 .adm-nav-label { letter-spacing: .14em; }
 .adm-nav a {
@@ -403,6 +500,9 @@ body { background: linear-gradient(180deg, #f7f8fc 0%, #eef0f7 100%); }
 /* Mobile tweak for fixed sidebar */
 @media (max-width: 768px) {
     .adm-shell { padding-left: 70px; }
-    .adm-brand span:not(.adm-brand-mark), .adm-nav a span, .adm-nav-label, .adm-sidefoot a span { display: none; }
+    .adm-brand-label, .adm-nav a span, .adm-nav-label, .adm-sidefoot a span { display: none; }
+    .adm-brand .motrive-logo__word { display: none; }
+    .adm-brand .motrive-logo { font-size: 26px; }
+    .adm-brand { justify-content: center; }
     .adm-nav a:hover { transform: none; }
 }

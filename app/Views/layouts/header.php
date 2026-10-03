@@ -9,14 +9,7 @@ $active       = current_path();
 <header class="site-header">
     <div class="container header-inner">
         <!-- Brand -->
-        <a class="brand" href="<?= url('/') ?>">
-            <?php if (setting('company_logo')): ?>
-                <img class="brand-img" src="<?= e(asset(setting('company_logo'))) ?>" alt="<?= e(setting('company_name')) ?>">
-            <?php else: ?>
-                <span class="brand-mark"><?= e(mb_substr(setting('company_logo_text', setting('company_name', 'S')), 0, 1)) ?></span>
-            <?php endif; ?>
-            <span class="brand-text"><?= e(setting('company_logo_text', setting('company_name'))) ?></span>
-        </a>
+        <?= brand_logo_link() ?>
 
         <!-- Desktop nav -->
         <nav class="main-nav" id="mainNav" aria-label="Main navigation">
@@ -97,7 +90,7 @@ $active       = current_path();
     <!-- Mobile menu -->
     <div class="mobile-menu" id="mobileMenu">
         <div class="mm-head">
-            <span class="brand-text"><?= e(setting('company_logo_text', setting('company_name'))) ?></span>
+            <?= brand_logo_link() ?>
             <button class="mm-close" id="mmClose" type="button" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <nav>

@@ -13,12 +13,7 @@ $copyright   = str_replace('{year}', (string) $year, setting('copyright_text', '
             <!-- Brand -->
             <div class="footer-brand">
                 <a class="brand footer-brand-logo" href="<?= url('/') ?>">
-                    <?php if (setting('company_logo')): ?>
-                        <img class="brand-img" src="<?= e(asset(setting('company_logo'))) ?>" alt="<?= e(setting('company_name')) ?>">
-                    <?php else: ?>
-                        <span class="brand-mark"><?= e(mb_substr(setting('company_logo_text', setting('company_name', 'M')), 0, 1)) ?></span>
-                    <?php endif; ?>
-                    <span class="brand-text"><?= e(setting('company_logo_text', setting('company_name'))) ?></span>
+                    <?= brand_logo() ?>
                 </a>
                 <p><?= e(setting('footer_about')) ?></p>
                 <div class="social-row">

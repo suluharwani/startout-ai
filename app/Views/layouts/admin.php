@@ -16,7 +16,7 @@ $cp = current_path();
     <meta name="robots" content="noindex, nofollow">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%23ff6a00'/><text x='50' y='68' font-size='52' font-family='Arial' font-weight='bold' text-anchor='middle' fill='white'>A</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Sora:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="<?= asset('/assets/css/admin.css') ?>">
@@ -25,13 +25,9 @@ $cp = current_path();
 <div class="adm-shell">
 
     <aside class="adm-sidebar">
-        <a class="adm-brand" href="<?= url('/admin') ?>">
-            <?php if (setting('company_logo')): ?>
-                <img class="adm-brand-img" src="<?= e(asset(setting('company_logo'))) ?>" alt="<?= e(setting('company_name')) ?>">
-            <?php else: ?>
-                <span class="adm-brand-mark"><?= e(mb_substr(setting('company_name', 'S'), 0, 1)) ?></span>
-            <?php endif; ?>
-            <span><?= e(setting('company_name')) ?> <span style="opacity:.5;font-size:.7rem;display:block">Admin</span></span>
+        <a class="adm-brand" href="<?= url('/admin') ?>" aria-label="<?= e(setting('company_name')) ?> — admin dashboard">
+            <?= brand_logo() ?>
+            <span class="adm-brand-label">Admin</span>
         </a>
 
         <nav class="adm-nav">
