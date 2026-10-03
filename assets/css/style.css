@@ -219,11 +219,18 @@ a:hover { color: var(--primary-600); }
 
    Four different values, so no single transform fits the word: "o" and "i" are
    drawn and the run is condensed by the weighted value that best fits the rest
-   (0.8212, which matches the artwork's 360px span).
+   (0.8212). That value is measured on the run's INK, not its advance box: at
+   weight 500 the ink spans 2.2960 em, which at font-size 1.1690em and scaleX
+   0.8212 occupies 2.2041 lockup em against the artwork's measured 2.2012 — a
+   residual of +0.13%. Scaling the advance box instead would need 0.8201, but
+   the ink is what the eye measures, so 0.8212 stands.
 
    The weight is 500 because the artwork's "o" wall is 0.2019 of an x-height and
    Sora 500 measures 0.2052 (+1.6%), where 400 is 0.1706 (-15.5%) and 600 is
-   0.2414 (+19.6%).
+   0.2414 (+19.6%). The layouts therefore request Sora at wght@400;500;600 —
+   with only 400 and 600 loaded the browser silently fell back to 400, whose ink
+   runs 1.57% narrow against the artwork. That shortfall is what made "trive"
+   look too tight; the 500 in the URL is what makes the numbers above true.
 
    Both drawn letters are exact rather than approximated: the "o" is a true
    ellipse (at most 3px deviation from a perfect one over 125 sampled columns)
